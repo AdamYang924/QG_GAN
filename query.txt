@@ -1,0 +1,1024 @@
+FROM lineitem SELECT l_linenumber
+FROM lineitem SELECT l_shipdate , l_orderkey WHERE l_tax > bucket_2 AND l_linenumber <= bucket_3 AND l_receiptdate < bucket_1 OR l_extendedprice <= bucket_2 AND l_tax < bucket_4
+FROM region SELECT r_name WHERE r_regionkey < bucket_4
+FROM lineitem ,  supplier SELECT s_address WHERE l_receiptdate <= bucket_1
+FROM lineitem , partsupp , supplier SELECT l_linestatus
+FROM orders SELECT o_comment
+FROM orders SELECT o_orderkey
+FROM region SELECT r_name
+FROM partsupp , region SELECT ps_comment
+FROM lineitem SELECT l_linestatus , l_orderkey
+FROM partsupp , nation , customer SELECT c_custkey
+FROM part SELECT p_size
+FROM partsupp , orders , part SELECT o_shippriority WHERE p_size < bucket_2 AND o_custkey = bucket_2 AND o_orderpriority > bucket_4 AND o_orderkey >= bucket_4 OR o_orderkey <= bucket_2 AND o_orderkey <= bucket_3 AND ps_partkey > bucket_3 OR o_custkey = bucket_1 AND ps_comment < bucket_2 OR p_type > bucket_4 AND o_orderstatus < bucket_2 OR ps_availqty > bucket_3
+FROM lineitem , partsupp , region SELECT l_returnflag , l_shipinstruct
+FROM lineitem SELECT l_shipinstruct WHERE l_linenumber != bucket_3 AND l_extendedprice <= bucket_2 OR l_shipmode > bucket_1 OR l_shipdate <= bucket_2 OR l_returnflag != bucket_1 AND l_returnflag <= bucket_1 OR l_tax > bucket_0 OR l_linestatus <= bucket_0
+FROM nation , customer , partsupp SELECT c_custkey WHERE ps_supplycost = bucket_0 OR ps_partkey <= bucket_1 AND ps_comment >= bucket_2
+FROM supplier SELECT s_comment WHERE s_address <= bucket_2 OR s_phone != bucket_1 AND s_acctbal >= bucket_0
+FROM part SELECT p_type WHERE p_type = bucket_2 OR p_size < bucket_1 OR p_comment >= bucket_0 AND p_name >= bucket_3 AND p_brand >= bucket_3 AND p_mfgr >= bucket_0
+FROM lineitem , part , supplier SELECT p_name
+FROM partsupp SELECT ps_partkey WHERE ps_availqty > bucket_2
+FROM lineitem , customer SELECT l_commitdate WHERE c_acctbal = bucket_4 AND l_tax != bucket_0
+FROM part SELECT p_type WHERE p_size = bucket_1 AND p_brand = bucket_1 OR p_mfgr > bucket_0 OR p_comment > bucket_3 OR p_name != bucket_3
+FROM customer , region , supplier SELECT r_regionkey WHERE c_acctbal = bucket_1 OR c_name >= bucket_4 AND s_nationkey < bucket_2 OR s_name = bucket_4
+FROM part , region SELECT p_type , p_container WHERE p_retailprice >= bucket_3
+FROM nation , supplier SELECT n_regionkey
+FROM lineitem , partsupp SELECT l_comment
+FROM lineitem SELECT l_shipdate , l_linestatus WHERE l_shipinstruct <= bucket_4 OR l_quantity >= bucket_4
+FROM lineitem SELECT l_linestatus
+FROM customer SELECT c_comment , c_phone WHERE c_name <= bucket_4 OR c_phone > bucket_1 AND c_nationkey > bucket_3
+FROM supplier , lineitem , region SELECT l_linestatus
+FROM partsupp SELECT ps_supplycost WHERE ps_comment >= bucket_1 OR ps_comment < bucket_4
+FROM orders SELECT o_custkey
+FROM region , customer SELECT c_address , c_phone
+FROM nation , region , lineitem SELECT l_shipdate
+FROM lineitem , supplier SELECT s_comment
+FROM customer , orders , partsupp SELECT o_orderpriority WHERE o_shippriority >= bucket_1 AND c_address != bucket_0 OR c_comment != bucket_3
+FROM lineitem SELECT l_discount , l_shipmode WHERE l_discount < bucket_3 OR l_suppkey != bucket_4
+FROM customer SELECT c_custkey WHERE c_acctbal > bucket_2
+FROM partsupp SELECT ps_partkey WHERE ps_partkey != bucket_3
+FROM nation , part SELECT n_comment , n_nationkey
+FROM partsupp , orders SELECT o_orderpriority , o_orderkey
+FROM customer SELECT c_name , c_acctbal
+FROM orders , region , supplier SELECT o_orderdate WHERE r_regionkey <= bucket_0 OR o_orderkey <= bucket_0 OR s_acctbal >= bucket_1
+FROM nation , lineitem SELECT l_quantity
+FROM customer , nation , part SELECT p_name , p_partkey
+FROM orders , region SELECT o_orderstatus , o_comment , o_shippriority
+FROM region , orders ,  partsupp SELECT o_custkey WHERE r_name >= bucket_2
+FROM partsupp , lineitem SELECT l_quantity WHERE l_tax != bucket_0 OR l_comment = bucket_3 OR l_linestatus != bucket_1
+FROM part SELECT p_size
+FROM nation SELECT n_regionkey , n_comment WHERE n_regionkey > bucket_4 OR n_regionkey <= bucket_2 AND n_regionkey > bucket_0 OR n_name <= bucket_1
+FROM lineitem , customer SELECT l_discount , l_comment , l_orderkey WHERE l_commitdate >= bucket_0 OR l_returnflag >= bucket_2
+FROM orders , nation , lineitem SELECT l_shipinstruct , n_nationkey , o_custkey , l_extendedprice WHERE l_shipinstruct > bucket_3
+FROM supplier , orders SELECT o_orderpriority , s_suppkey WHERE o_orderstatus = bucket_4 AND o_custkey >= bucket_1
+FROM customer SELECT c_name , c_acctbal
+FROM region SELECT r_regionkey WHERE r_name >= bucket_0 AND r_name <= bucket_4 OR r_name = bucket_2
+FROM nation , lineitem SELECT l_extendedprice WHERE l_commitdate < bucket_0 AND n_nationkey >= bucket_2
+FROM lineitem , supplier SELECT l_returnflag , s_acctbal WHERE l_linenumber != bucket_2
+FROM lineitem , supplier , orders SELECT l_partkey WHERE o_orderdate <= bucket_2
+FROM partsupp , orders SELECT o_custkey , o_shippriority
+FROM nation SELECT n_regionkey WHERE n_comment = bucket_1
+FROM lineitem , customer SELECT c_acctbal , c_nationkey , l_comment
+FROM part SELECT p_partkey
+FROM partsupp ,  nation SELECT n_comment
+FROM customer , region , orders SELECT o_orderstatus , o_orderpriority , c_acctbal
+FROM orders , nation ,  region SELECT r_regionkey
+FROM region , lineitem SELECT r_name
+FROM partsupp SELECT ps_supplycost WHERE ps_supplycost != bucket_3 OR ps_availqty <= bucket_3
+FROM customer SELECT c_address , c_nationkey
+FROM customer SELECT c_address , c_phone
+FROM partsupp , supplier , nation SELECT n_comment WHERE s_comment >= bucket_2 AND ps_comment < bucket_0 AND n_comment != bucket_1 AND s_address >= bucket_1 OR ps_partkey > bucket_0 OR s_name = bucket_2 OR ps_availqty < bucket_4 OR s_phone = bucket_1
+FROM supplier SELECT s_nationkey
+FROM part SELECT p_comment
+FROM orders , part , partsupp SELECT ps_partkey WHERE p_retailprice <= bucket_0 AND p_retailprice = bucket_1
+FROM orders SELECT o_orderpriority
+FROM region , part SELECT p_container WHERE r_regionkey >= bucket_0 OR r_regionkey > bucket_2 OR p_container >= bucket_0 OR p_comment <= bucket_4 AND p_container >= bucket_1 OR p_brand > bucket_4 OR p_size > bucket_3 OR p_mfgr != bucket_3
+FROM region SELECT r_regionkey , r_comment WHERE r_regionkey >= bucket_0 AND r_regionkey != bucket_3 AND r_regionkey >= bucket_4
+FROM part SELECT p_brand
+FROM customer , partsupp , supplier SELECT ps_comment , s_phone
+FROM partsupp SELECT ps_comment
+FROM lineitem SELECT l_linenumber WHERE l_linestatus >= bucket_4
+FROM region SELECT r_regionkey , r_comment , r_name WHERE r_comment > bucket_1 AND r_name < bucket_4 AND r_comment != bucket_0 OR r_comment >= bucket_4 AND r_name != bucket_4
+FROM partsupp SELECT ps_partkey
+FROM orders SELECT o_clerk
+FROM customer SELECT c_address , c_nationkey WHERE c_phone < bucket_4 AND c_comment != bucket_3
+FROM lineitem SELECT l_linestatus , l_commitdate , l_orderkey WHERE l_linestatus > bucket_0 OR l_discount = bucket_1
+FROM part , nation , supplier SELECT p_brand , n_name , s_nationkey WHERE n_regionkey = bucket_1 OR s_acctbal = bucket_3
+FROM part , supplier SELECT p_comment WHERE p_comment != bucket_2 AND p_partkey <= bucket_0 OR s_suppkey < bucket_3 OR s_address = bucket_3 OR p_brand > bucket_2 AND p_comment >= bucket_0 OR p_container != bucket_0 OR p_size != bucket_0 OR p_size > bucket_0
+FROM nation SELECT n_nationkey WHERE n_regionkey <= bucket_0 AND n_name <= bucket_2 OR n_regionkey > bucket_2 OR n_comment != bucket_2
+FROM customer , part SELECT c_comment WHERE p_size <= bucket_1 OR p_name != bucket_0
+FROM orders SELECT o_orderstatus
+FROM lineitem , customer , region SELECT l_shipinstruct WHERE l_suppkey >= bucket_4 OR l_commitdate != bucket_3 OR r_regionkey != bucket_3
+FROM lineitem SELECT l_quantity , l_commitdate
+FROM orders , nation , supplier SELECT o_custkey , s_nationkey
+FROM nation SELECT n_regionkey , n_name WHERE n_nationkey >= bucket_3 OR n_comment < bucket_0 AND n_regionkey <= bucket_0
+FROM region SELECT r_name WHERE r_regionkey = bucket_3
+FROM partsupp SELECT ps_suppkey
+FROM customer SELECT c_phone , c_acctbal
+FROM partsupp , customer SELECT ps_suppkey , c_address WHERE c_address > bucket_4 OR ps_partkey <= bucket_1
+FROM customer , partsupp , supplier SELECT ps_suppkey , c_phone , c_comment WHERE s_comment != bucket_0
+FROM partsupp , region SELECT ps_partkey , ps_comment
+FROM partsupp , nation ,  supplier SELECT ps_comment
+FROM lineitem SELECT l_partkey , l_suppkey
+FROM nation , partsupp SELECT ps_partkey WHERE n_nationkey > bucket_4 AND n_nationkey != bucket_1 OR ps_comment <= bucket_3 AND ps_supplycost < bucket_1 OR n_name != bucket_1 OR ps_partkey < bucket_3
+FROM supplier , lineitem SELECT s_comment WHERE l_linestatus > bucket_1
+FROM customer SELECT c_name WHERE c_name > bucket_3 OR c_phone >= bucket_3 AND c_comment != bucket_3 AND c_name = bucket_4
+FROM supplier SELECT s_acctbal WHERE s_comment = bucket_2 OR s_comment = bucket_2 OR s_acctbal != bucket_1
+FROM nation SELECT n_name
+FROM nation SELECT n_comment , n_name WHERE n_nationkey != bucket_2
+FROM part SELECT p_partkey WHERE p_comment >= bucket_3
+FROM customer , lineitem SELECT l_shipdate , l_orderkey WHERE l_shipdate <= bucket_3 OR l_suppkey = bucket_0
+FROM nation SELECT n_regionkey WHERE n_name != bucket_3 AND n_nationkey <= bucket_0 AND n_regionkey > bucket_2 OR n_name != bucket_2 AND n_comment <= bucket_1
+FROM customer SELECT c_nationkey WHERE c_phone != bucket_3
+FROM supplier , customer SELECT s_name WHERE s_address <= bucket_4
+FROM region SELECT r_name WHERE r_comment <= bucket_4 AND r_regionkey > bucket_3
+FROM supplier SELECT s_name
+FROM supplier , customer , nation SELECT n_name WHERE c_comment <= bucket_2
+FROM region SELECT r_comment WHERE r_regionkey = bucket_2 OR r_name != bucket_0 OR r_name < bucket_1 AND r_comment <= bucket_2
+FROM customer SELECT c_comment
+FROM supplier , nation , region SELECT s_name , n_name , s_comment
+FROM nation SELECT n_comment WHERE n_nationkey = bucket_0
+FROM supplier , orders SELECT s_phone WHERE s_suppkey = bucket_1 AND o_totalprice = bucket_0
+FROM orders , partsupp , lineitem SELECT o_orderpriority WHERE l_comment = bucket_1 OR l_extendedprice < bucket_3 OR o_clerk <= bucket_0 AND l_returnflag >= bucket_4 OR l_linestatus = bucket_1
+FROM lineitem , customer SELECT l_discount
+FROM supplier SELECT s_nationkey
+FROM lineitem SELECT l_shipinstruct
+FROM part SELECT p_retailprice , p_mfgr
+FROM orders , customer SELECT o_totalprice
+FROM region , orders SELECT o_orderkey
+FROM nation SELECT n_regionkey WHERE n_comment <= bucket_1 OR n_name = bucket_3 AND n_nationkey > bucket_2 AND n_name != bucket_0 OR n_comment <= bucket_3 AND n_nationkey = bucket_4 OR n_nationkey != bucket_3
+FROM part SELECT p_type
+FROM partsupp SELECT ps_availqty WHERE ps_availqty != bucket_2 AND ps_availqty < bucket_0 AND ps_comment > bucket_3
+FROM region SELECT r_name , r_regionkey WHERE r_comment < bucket_4 AND r_comment <= bucket_1 AND r_name != bucket_1 AND r_comment >= bucket_0
+FROM part , orders , nation SELECT n_name
+FROM orders SELECT o_orderdate , o_clerk WHERE o_shippriority > bucket_2 AND o_orderkey < bucket_1
+FROM supplier SELECT s_address
+FROM customer , supplier , partsupp SELECT c_phone WHERE ps_comment < bucket_1 OR c_name != bucket_0 AND s_nationkey < bucket_2 AND ps_availqty = bucket_4 AND s_name != bucket_3 OR ps_comment < bucket_3 AND ps_partkey != bucket_2
+FROM lineitem , nation , region SELECT l_comment , r_name
+FROM partsupp SELECT ps_availqty , ps_comment
+FROM customer SELECT c_name , c_acctbal WHERE c_name != bucket_3 AND c_nationkey < bucket_4 OR c_nationkey <= bucket_2 AND c_name != bucket_1 OR c_address != bucket_4 AND c_nationkey > bucket_2 AND c_name < bucket_2 AND c_custkey > bucket_4 AND c_name > bucket_1 AND c_phone >= bucket_3
+FROM part , nation SELECT n_comment
+FROM region , lineitem , orders SELECT l_partkey WHERE l_returnflag > bucket_2 OR l_orderkey = bucket_2
+FROM nation SELECT n_name WHERE n_nationkey = bucket_3 OR n_name >= bucket_2
+FROM orders , region SELECT r_regionkey
+FROM orders , region , nation SELECT o_orderpriority
+FROM region , orders SELECT r_regionkey WHERE o_orderdate >= bucket_1 AND o_orderpriority >= bucket_4 OR o_orderpriority != bucket_1 AND r_regionkey >= bucket_1 OR o_orderpriority <= bucket_0 OR o_orderstatus > bucket_0 AND r_name = bucket_0 AND o_orderkey = bucket_4 AND r_comment != bucket_4
+FROM lineitem , orders , customer SELECT c_mktsegment
+FROM customer SELECT c_custkey WHERE c_phone <= bucket_2 OR c_name < bucket_0 AND c_comment <= bucket_3 OR c_mktsegment > bucket_1 AND c_custkey = bucket_2 OR c_comment < bucket_0 OR c_acctbal >= bucket_3 AND c_nationkey > bucket_3 AND c_phone > bucket_0 OR c_name > bucket_1 AND c_comment >= bucket_3
+FROM supplier , orders , customer SELECT s_nationkey
+FROM supplier , customer SELECT c_name WHERE s_name = bucket_1
+FROM customer SELECT c_mktsegment , c_name , c_acctbal , c_comment , c_phone WHERE c_address >= bucket_2 OR c_mktsegment != bucket_2
+FROM orders , part SELECT o_orderdate
+FROM lineitem , part ,  supplier SELECT p_comment WHERE l_extendedprice > bucket_1 OR p_mfgr != bucket_3
+FROM lineitem ,  nation SELECT l_quantity , l_shipinstruct
+FROM lineitem SELECT l_linestatus
+FROM partsupp SELECT ps_supplycost
+FROM part , nation SELECT p_size WHERE n_name >= bucket_4 AND p_brand >= bucket_4 AND n_nationkey >= bucket_2
+FROM supplier , customer , orders SELECT o_orderstatus , o_comment WHERE s_acctbal = bucket_2 AND s_name >= bucket_0 AND o_orderdate < bucket_2 AND c_nationkey > bucket_1 AND s_comment <= bucket_0 AND s_phone <= bucket_1 AND o_totalprice = bucket_1 AND s_comment >= bucket_0 OR c_name < bucket_2 AND s_name <= bucket_0 OR o_orderkey != bucket_3 AND o_orderpriority >= bucket_4 AND c_acctbal = bucket_3
+FROM lineitem , orders SELECT l_discount
+FROM lineitem SELECT l_quantity WHERE l_orderkey <= bucket_4
+FROM region SELECT r_name
+FROM region , part SELECT p_name WHERE r_name > bucket_2
+FROM part , customer , nation SELECT n_nationkey
+FROM lineitem SELECT l_extendedprice
+FROM nation SELECT n_regionkey WHERE n_comment = bucket_0 OR n_name >= bucket_2 AND n_comment <= bucket_3 OR n_regionkey != bucket_3 OR n_nationkey != bucket_0 AND n_name != bucket_3
+FROM partsupp , part SELECT p_container
+FROM partsupp , region ,  nation SELECT n_nationkey , ps_suppkey , n_name WHERE n_name != bucket_1 OR n_regionkey < bucket_1
+FROM partsupp , nation SELECT ps_partkey
+FROM lineitem SELECT l_partkey WHERE l_shipinstruct <= bucket_4 OR l_partkey < bucket_1 OR l_tax > bucket_4
+FROM region SELECT r_regionkey WHERE r_name <= bucket_3 OR r_name != bucket_1 AND r_regionkey = bucket_4 AND r_name < bucket_1 AND r_regionkey <= bucket_4
+FROM supplier SELECT s_nationkey WHERE s_address <= bucket_0 OR s_address < bucket_4 AND s_name != bucket_1
+FROM supplier , part SELECT p_partkey WHERE p_retailprice <= bucket_4 AND s_name < bucket_2 AND p_mfgr <= bucket_1 OR p_size >= bucket_1 OR s_comment >= bucket_3
+FROM part , partsupp , region SELECT p_size , p_name
+FROM lineitem , orders , region SELECT l_extendedprice WHERE l_extendedprice < bucket_2
+FROM supplier SELECT s_comment WHERE s_nationkey < bucket_1 OR s_phone <= bucket_4 AND s_name <= bucket_3
+FROM orders , region ,  part SELECT p_size , p_brand
+FROM customer SELECT c_phone WHERE c_address <= bucket_2 OR c_mktsegment != bucket_3 AND c_phone != bucket_2 OR c_mktsegment > bucket_3 OR c_name != bucket_2 AND c_name > bucket_3
+FROM part SELECT p_name , p_partkey , p_container
+FROM region SELECT r_comment
+FROM region SELECT r_regionkey WHERE r_name <= bucket_3 AND r_regionkey > bucket_1 AND r_name != bucket_0 OR r_comment <= bucket_3 AND r_regionkey > bucket_0 AND r_regionkey <= bucket_1
+FROM part , customer , supplier SELECT s_phone
+FROM supplier SELECT s_suppkey , s_nationkey WHERE s_name != bucket_2 OR s_name > bucket_4 OR s_suppkey > bucket_1 OR s_name != bucket_1 OR s_acctbal < bucket_0 AND s_comment >= bucket_0
+FROM customer SELECT c_phone
+FROM supplier , lineitem , orders SELECT l_commitdate
+FROM supplier , part , lineitem SELECT l_commitdate WHERE p_container >= bucket_4 OR s_phone < bucket_0 AND s_suppkey >= bucket_3 AND l_shipmode != bucket_2
+FROM customer , partsupp , orders SELECT c_address
+FROM customer SELECT c_acctbal , c_address
+FROM orders SELECT o_comment
+FROM orders SELECT o_shippriority , o_orderdate
+FROM supplier , customer , nation SELECT n_comment WHERE c_nationkey > bucket_2 OR c_mktsegment > bucket_2 AND c_comment < bucket_3 OR c_custkey != bucket_1 OR s_phone <= bucket_1 AND n_nationkey >= bucket_1 OR s_comment >= bucket_1 AND n_comment <= bucket_0 AND c_phone != bucket_3
+FROM lineitem SELECT l_comment
+FROM supplier , region SELECT s_acctbal WHERE s_name >= bucket_4
+FROM partsupp SELECT ps_supplycost
+FROM supplier , lineitem SELECT s_address , l_linestatus WHERE s_phone != bucket_1 AND l_linenumber != bucket_3 OR s_comment > bucket_4
+FROM orders SELECT o_orderstatus
+FROM customer , partsupp , supplier SELECT s_address , c_comment WHERE s_phone < bucket_4 OR s_name < bucket_0 AND c_nationkey = bucket_4 OR ps_availqty < bucket_1
+FROM partsupp SELECT ps_comment WHERE ps_partkey > bucket_0 AND ps_suppkey <= bucket_2 AND ps_comment < bucket_4
+FROM part SELECT p_brand WHERE p_partkey != bucket_1 AND p_comment < bucket_2
+FROM supplier SELECT s_acctbal
+FROM partsupp SELECT ps_partkey WHERE ps_partkey <= bucket_1 AND ps_suppkey < bucket_3 OR ps_comment = bucket_4 OR ps_suppkey < bucket_0
+FROM customer SELECT c_mktsegment
+FROM customer , nation SELECT c_comment , c_nationkey , n_name WHERE c_custkey >= bucket_4
+FROM orders SELECT o_comment
+FROM customer , region , part SELECT r_regionkey WHERE p_mfgr < bucket_3
+FROM part , partsupp SELECT ps_availqty WHERE p_comment >= bucket_4 AND ps_comment > bucket_4
+FROM supplier SELECT s_nationkey
+FROM nation , region SELECT n_regionkey , r_regionkey , n_comment
+FROM lineitem , partsupp , supplier SELECT s_comment WHERE ps_suppkey <= bucket_3
+FROM region SELECT r_name WHERE r_name = bucket_2 AND r_name >= bucket_1 OR r_comment != bucket_1 AND r_regionkey >= bucket_2 OR r_name < bucket_4 OR r_regionkey != bucket_2
+FROM part SELECT p_comment WHERE p_mfgr != bucket_3 AND p_container < bucket_0 AND p_type > bucket_0 OR p_retailprice < bucket_0 OR p_type <= bucket_3
+FROM region , supplier , part SELECT s_suppkey
+FROM orders SELECT o_orderkey
+FROM region SELECT r_regionkey
+FROM part , nation SELECT p_name WHERE p_brand = bucket_1 OR p_size < bucket_1 AND p_size = bucket_3 AND p_name >= bucket_0 OR p_mfgr >= bucket_4 AND p_mfgr <= bucket_1
+FROM lineitem SELECT l_tax , l_returnflag WHERE l_quantity < bucket_0
+FROM supplier SELECT s_nationkey WHERE s_nationkey >= bucket_0 AND s_acctbal = bucket_2
+FROM orders SELECT o_clerk
+FROM nation SELECT n_comment WHERE n_regionkey != bucket_4 AND n_name >= bucket_3 OR n_comment != bucket_2
+FROM orders , supplier , region SELECT s_suppkey WHERE s_phone < bucket_4
+FROM orders , supplier SELECT s_comment
+FROM lineitem SELECT l_extendedprice , l_partkey
+FROM part , region , lineitem SELECT l_shipinstruct
+FROM orders , partsupp SELECT ps_suppkey WHERE o_orderstatus <= bucket_2 OR o_totalprice <= bucket_2
+FROM customer , part SELECT c_comment
+FROM partsupp SELECT ps_availqty WHERE ps_availqty <= bucket_1 AND ps_partkey = bucket_1 AND ps_supplycost >= bucket_3 OR ps_partkey <= bucket_3
+FROM part , partsupp , region SELECT p_type WHERE ps_comment = bucket_0 OR ps_comment <= bucket_1
+FROM supplier SELECT s_nationkey
+FROM customer , orders , nation SELECT o_shippriority , c_nationkey WHERE o_orderdate > bucket_2 AND o_shippriority >= bucket_4 OR o_comment >= bucket_1
+FROM orders SELECT o_shippriority , o_totalprice , o_orderdate
+FROM supplier SELECT s_suppkey WHERE s_address = bucket_1 AND s_name < bucket_3 AND s_phone != bucket_2 OR s_nationkey != bucket_4 AND s_acctbal < bucket_4
+FROM nation SELECT n_nationkey
+FROM lineitem , nation , region SELECT l_extendedprice , n_nationkey WHERE l_quantity > bucket_4 OR l_orderkey >= bucket_2 AND l_shipmode <= bucket_4
+FROM part , lineitem SELECT l_comment
+FROM orders , nation SELECT o_orderstatus WHERE o_comment > bucket_0 OR n_regionkey >= bucket_3 AND o_totalprice != bucket_0
+FROM region SELECT r_regionkey WHERE r_comment > bucket_4 OR r_comment <= bucket_4 OR r_comment = bucket_3 OR r_name >= bucket_1
+FROM nation SELECT n_regionkey WHERE n_name < bucket_1 OR n_regionkey >= bucket_2 AND n_name < bucket_1
+FROM partsupp SELECT ps_supplycost WHERE ps_comment > bucket_1 OR ps_comment = bucket_2
+FROM orders SELECT o_clerk WHERE o_orderpriority <= bucket_2 AND o_comment > bucket_0 OR o_orderkey != bucket_4 OR o_orderkey != bucket_1 AND o_orderstatus < bucket_1 AND o_orderpriority != bucket_3 OR o_orderpriority <= bucket_1 OR o_orderstatus > bucket_0
+FROM nation ,  lineitem SELECT l_tax WHERE l_receiptdate = bucket_3 OR l_linenumber != bucket_1 AND l_extendedprice <= bucket_3 OR l_comment <= bucket_1
+FROM partsupp SELECT ps_supplycost WHERE ps_availqty < bucket_4 AND ps_comment < bucket_0 OR ps_supplycost != bucket_3 OR ps_partkey < bucket_2 AND ps_availqty <= bucket_0 AND ps_comment < bucket_0 AND ps_partkey = bucket_2 AND ps_availqty <= bucket_3
+FROM lineitem SELECT l_tax , l_partkey WHERE l_receiptdate != bucket_0 OR l_shipinstruct >= bucket_3 OR l_orderkey <= bucket_2
+FROM part , nation SELECT p_partkey WHERE n_name <= bucket_3
+FROM lineitem SELECT l_comment , l_quantity
+FROM nation SELECT n_regionkey , n_name WHERE n_nationkey != bucket_4 OR n_comment >= bucket_4 AND n_name < bucket_1 OR n_name > bucket_1
+FROM partsupp , orders SELECT ps_partkey
+FROM region SELECT r_name WHERE r_name = bucket_4 OR r_comment != bucket_1 AND r_comment != bucket_2 AND r_regionkey >= bucket_0 OR r_name >= bucket_1
+FROM nation , customer SELECT n_nationkey , c_acctbal , c_custkey WHERE n_regionkey > bucket_0 AND c_mktsegment = bucket_1
+FROM lineitem , customer SELECT c_acctbal , l_tax , l_extendedprice , c_address WHERE c_mktsegment >= bucket_1 AND l_extendedprice >= bucket_2
+FROM region SELECT r_comment , r_name , r_regionkey
+FROM orders , part , customer SELECT c_name WHERE c_address >= bucket_4
+FROM lineitem SELECT l_comment WHERE l_linenumber != bucket_2
+FROM nation , part SELECT p_type
+FROM part SELECT p_name , p_container
+FROM supplier SELECT s_comment
+FROM lineitem SELECT l_receiptdate
+FROM part SELECT p_comment
+FROM lineitem , region , customer SELECT l_discount WHERE l_comment != bucket_4 AND l_returnflag <= bucket_0 AND l_receiptdate != bucket_1
+FROM nation SELECT n_name
+FROM region SELECT r_regionkey , r_comment WHERE r_name < bucket_4
+FROM customer SELECT c_acctbal WHERE c_name != bucket_3 OR c_custkey = bucket_3 AND c_nationkey <= bucket_1 OR c_address >= bucket_0
+FROM lineitem , part SELECT l_quantity
+FROM lineitem SELECT l_returnflag , l_linestatus
+FROM part SELECT p_comment
+FROM orders SELECT o_orderkey
+FROM lineitem SELECT l_linestatus WHERE l_receiptdate >= bucket_3 AND l_returnflag > bucket_4
+FROM orders SELECT o_clerk
+FROM partsupp , supplier SELECT ps_comment WHERE ps_comment = bucket_0 AND s_nationkey <= bucket_4 OR ps_partkey >= bucket_3 OR ps_partkey >= bucket_3 OR s_suppkey != bucket_4 OR s_acctbal < bucket_0
+FROM region SELECT r_comment
+FROM supplier , orders SELECT s_phone
+FROM part , orders SELECT p_type , o_comment , p_partkey , o_orderdate
+FROM supplier , orders , partsupp SELECT o_totalprice , o_custkey , s_phone
+FROM part , orders SELECT o_custkey
+FROM supplier , nation , part SELECT s_suppkey
+FROM supplier , customer SELECT c_acctbal , c_nationkey , c_mktsegment
+FROM orders , nation , part SELECT p_comment WHERE p_name != bucket_1 AND n_nationkey >= bucket_0 AND o_shippriority != bucket_4 OR p_size != bucket_4
+FROM nation SELECT n_name WHERE n_name <= bucket_2 OR n_comment != bucket_2
+FROM part , nation SELECT n_comment
+FROM nation SELECT n_name , n_regionkey WHERE n_comment = bucket_0
+FROM nation , customer SELECT c_name
+FROM lineitem , customer , supplier SELECT l_shipdate
+FROM partsupp SELECT ps_comment WHERE ps_partkey > bucket_3 AND ps_suppkey >= bucket_3
+FROM orders , partsupp SELECT o_orderdate WHERE o_clerk = bucket_4 AND o_clerk > bucket_1 OR o_orderdate = bucket_1 AND o_orderkey != bucket_0 AND o_orderdate > bucket_4
+FROM part , region , supplier SELECT s_name WHERE p_type >= bucket_3 OR p_container >= bucket_3
+FROM partsupp , orders , lineitem SELECT o_custkey
+FROM orders SELECT o_totalprice WHERE o_clerk = bucket_3
+FROM customer SELECT c_name WHERE c_acctbal > bucket_2 AND c_mktsegment = bucket_1 AND c_acctbal = bucket_2
+FROM part SELECT p_mfgr
+FROM orders SELECT o_orderdate
+FROM customer , region , part SELECT p_partkey WHERE c_nationkey >= bucket_0 AND p_size = bucket_4
+FROM partsupp SELECT ps_partkey
+FROM nation SELECT n_name WHERE n_name > bucket_3
+FROM supplier SELECT s_address , s_suppkey , s_name WHERE s_nationkey <= bucket_0 OR s_suppkey < bucket_1
+FROM partsupp , lineitem , region SELECT l_orderkey , l_suppkey , l_extendedprice WHERE l_discount != bucket_2 OR l_comment < bucket_4
+FROM nation , region SELECT r_regionkey , r_comment
+FROM part SELECT p_size , p_type
+FROM orders , customer SELECT o_custkey
+FROM partsupp SELECT ps_suppkey WHERE ps_comment = bucket_3 AND ps_suppkey < bucket_2 OR ps_suppkey >= bucket_4 AND ps_partkey < bucket_0 OR ps_comment > bucket_4 OR ps_supplycost >= bucket_3 OR ps_comment >= bucket_2 OR ps_partkey > bucket_1 AND ps_partkey <= bucket_0
+FROM customer , part , supplier SELECT p_size
+FROM nation SELECT n_comment , n_name
+FROM part , orders SELECT p_comment , p_container WHERE o_orderstatus = bucket_2 OR o_totalprice < bucket_3 AND o_orderdate > bucket_0 OR o_comment != bucket_2
+FROM customer SELECT c_phone WHERE c_mktsegment != bucket_2
+FROM nation , partsupp SELECT ps_supplycost , n_regionkey , ps_availqty
+FROM orders SELECT o_orderkey WHERE o_shippriority = bucket_1
+FROM supplier , partsupp SELECT s_phone
+FROM orders , nation SELECT o_clerk WHERE o_orderpriority >= bucket_1
+FROM region SELECT r_regionkey , r_comment WHERE r_comment != bucket_2
+FROM part SELECT p_name WHERE p_name != bucket_1 AND p_retailprice >= bucket_3 OR p_comment > bucket_2 AND p_mfgr <= bucket_0
+FROM part , supplier SELECT s_address , s_nationkey WHERE p_retailprice != bucket_0
+FROM customer , lineitem SELECT l_comment WHERE l_receiptdate <= bucket_2 AND l_suppkey > bucket_4 OR l_shipmode >= bucket_3
+FROM partsupp , orders SELECT ps_availqty WHERE o_shippriority < bucket_3
+FROM lineitem SELECT l_receiptdate WHERE l_shipmode = bucket_4
+FROM orders , nation SELECT o_custkey
+FROM nation , part , orders SELECT n_name
+FROM region , nation , part SELECT n_nationkey
+FROM part , partsupp SELECT ps_comment , p_partkey
+FROM partsupp , orders , supplier SELECT o_orderkey
+FROM customer , region SELECT r_regionkey
+FROM supplier , region , nation SELECT r_regionkey
+FROM lineitem SELECT l_commitdate
+FROM supplier SELECT s_suppkey WHERE s_acctbal <= bucket_1 OR s_address > bucket_1
+FROM part SELECT p_retailprice
+FROM orders , partsupp SELECT o_orderstatus
+FROM supplier , partsupp SELECT ps_partkey
+FROM supplier , part SELECT s_phone , p_size WHERE s_comment != bucket_0 OR s_address = bucket_2 OR p_type < bucket_1
+FROM part SELECT p_type
+FROM nation , partsupp , region SELECT n_comment
+FROM lineitem , customer , region SELECT r_regionkey WHERE l_receiptdate = bucket_1 OR l_suppkey > bucket_1 AND c_mktsegment <= bucket_0 OR r_name <= bucket_2
+FROM nation , part , supplier SELECT p_container
+FROM customer SELECT c_acctbal , c_comment , c_phone
+FROM lineitem , orders , nation SELECT l_partkey WHERE n_comment >= bucket_1 AND l_linestatus <= bucket_4 OR l_comment >= bucket_4 AND o_comment != bucket_2 OR l_shipdate != bucket_1 AND l_comment != bucket_4 AND l_comment <= bucket_2
+FROM supplier SELECT s_comment , s_acctbal
+FROM customer , region , nation SELECT c_nationkey
+FROM partsupp , lineitem ,  nation SELECT n_comment
+FROM customer SELECT c_name WHERE c_name != bucket_0 AND c_custkey = bucket_2
+FROM part SELECT p_type , p_retailprice , p_mfgr WHERE p_size != bucket_3 AND p_size > bucket_3 AND p_partkey != bucket_3 OR p_retailprice < bucket_0 AND p_type <= bucket_4 AND p_name = bucket_2 AND p_container <= bucket_0 AND p_mfgr <= bucket_4 OR p_type = bucket_2 AND p_comment != bucket_1 AND p_mfgr = bucket_0 AND p_container >= bucket_1 OR p_type != bucket_3
+FROM part , customer SELECT p_partkey , c_name
+FROM part , orders SELECT o_totalprice , o_orderpriority WHERE p_size != bucket_1 AND o_clerk > bucket_4 OR o_custkey != bucket_4
+FROM region SELECT r_regionkey WHERE r_name < bucket_2 AND r_name > bucket_0
+FROM nation SELECT n_nationkey
+FROM lineitem , nation SELECT l_comment
+FROM part , partsupp SELECT p_brand
+FROM part SELECT p_comment WHERE p_name <= bucket_3 OR p_name > bucket_1 AND p_type >= bucket_2 AND p_container != bucket_2
+FROM lineitem , orders SELECT l_linenumber WHERE l_tax > bucket_0 OR o_orderpriority > bucket_0 OR l_extendedprice != bucket_1
+FROM part , region , supplier SELECT r_regionkey WHERE r_comment <= bucket_0 OR s_address < bucket_1
+FROM partsupp , part , orders SELECT ps_suppkey
+FROM partsupp , part SELECT ps_suppkey
+FROM orders , lineitem SELECT o_orderdate WHERE o_orderpriority < bucket_2
+FROM region , partsupp SELECT ps_availqty WHERE r_regionkey <= bucket_3 AND ps_supplycost != bucket_3 AND r_regionkey != bucket_0
+FROM customer , supplier , orders SELECT s_name WHERE c_acctbal <= bucket_2
+FROM lineitem SELECT l_receiptdate WHERE l_discount <= bucket_2
+FROM customer , supplier SELECT s_acctbal WHERE s_phone >= bucket_3 OR c_acctbal >= bucket_2 AND c_nationkey != bucket_0 AND s_name > bucket_0 AND s_address < bucket_4 OR s_comment >= bucket_0 OR s_suppkey = bucket_1 OR c_comment >= bucket_2
+FROM region , part , partsupp SELECT p_name
+FROM lineitem , part SELECT p_size
+FROM customer SELECT c_address
+FROM customer , nation SELECT c_comment WHERE n_comment != bucket_4 AND n_comment >= bucket_0
+FROM partsupp , supplier SELECT ps_suppkey WHERE s_phone = bucket_2
+FROM supplier SELECT s_nationkey , s_address WHERE s_phone = bucket_1
+FROM supplier , customer SELECT c_comment , c_name
+FROM part , nation , customer SELECT p_name , c_acctbal
+FROM nation SELECT n_name
+FROM lineitem SELECT l_linestatus WHERE l_tax >= bucket_2
+FROM supplier , nation , customer SELECT c_mktsegment WHERE s_phone < bucket_0 AND s_nationkey > bucket_2 OR s_acctbal != bucket_3 OR s_nationkey != bucket_1
+FROM orders , lineitem SELECT l_linestatus WHERE l_extendedprice >= bucket_3
+FROM supplier SELECT s_phone WHERE s_nationkey != bucket_1 OR s_comment <= bucket_3 OR s_address >= bucket_3 AND s_acctbal != bucket_2 AND s_comment > bucket_0 OR s_address > bucket_1
+FROM region , supplier , orders SELECT s_nationkey , s_address , s_name
+FROM part , region , customer SELECT p_size WHERE c_acctbal >= bucket_2
+FROM orders SELECT o_orderstatus WHERE o_comment != bucket_2 OR o_shippriority > bucket_1 OR o_orderstatus > bucket_1 AND o_clerk != bucket_3
+FROM supplier SELECT s_phone , s_suppkey WHERE s_address > bucket_2
+FROM part , region SELECT p_brand WHERE p_comment != bucket_3 OR p_size != bucket_1
+FROM lineitem , supplier SELECT l_discount
+FROM region , part , lineitem SELECT l_quantity WHERE p_name <= bucket_3 AND l_suppkey >= bucket_3
+FROM nation SELECT n_regionkey , n_name , n_nationkey WHERE n_name != bucket_3 AND n_regionkey <= bucket_3 AND n_nationkey = bucket_0 AND n_comment >= bucket_2 AND n_comment = bucket_2 OR n_name < bucket_4 AND n_name > bucket_0
+FROM part SELECT p_type WHERE p_mfgr != bucket_1 OR p_retailprice < bucket_3 OR p_container <= bucket_1 AND p_retailprice = bucket_1
+FROM lineitem SELECT l_discount , l_receiptdate WHERE l_commitdate >= bucket_0 OR l_linestatus >= bucket_0
+FROM partsupp SELECT ps_partkey
+FROM orders SELECT o_custkey
+FROM nation SELECT n_regionkey , n_name WHERE n_regionkey > bucket_2 AND n_comment >= bucket_1 OR n_comment > bucket_3
+FROM lineitem SELECT l_extendedprice
+FROM lineitem SELECT l_discount
+FROM part , region SELECT r_comment
+FROM part , lineitem , supplier SELECT l_commitdate , l_returnflag , p_retailprice
+FROM nation SELECT n_regionkey , n_comment
+FROM region SELECT r_name
+FROM lineitem SELECT l_discount
+FROM lineitem , region , nation SELECT r_regionkey WHERE r_regionkey <= bucket_3 OR r_name < bucket_2
+FROM partsupp , region SELECT r_regionkey
+FROM lineitem SELECT l_extendedprice WHERE l_tax <= bucket_3
+FROM orders , nation , partsupp SELECT o_totalprice , o_orderkey WHERE n_nationkey <= bucket_4 OR o_orderpriority < bucket_1
+FROM nation SELECT n_nationkey WHERE n_comment >= bucket_0 OR n_nationkey < bucket_2 OR n_regionkey >= bucket_4 OR n_comment != bucket_3
+FROM orders SELECT o_orderstatus
+FROM lineitem SELECT l_shipmode , l_commitdate
+FROM lineitem , nation , customer SELECT n_nationkey
+FROM orders SELECT o_orderpriority , o_shippriority WHERE o_orderstatus > bucket_3
+FROM supplier , part , nation SELECT s_address WHERE s_phone != bucket_0 OR p_type < bucket_4 OR p_container < bucket_0
+FROM customer , nation SELECT n_comment
+FROM nation , region , customer SELECT c_comment WHERE c_address >= bucket_3 AND r_comment > bucket_0 AND n_comment != bucket_1 OR r_comment <= bucket_2 AND r_regionkey <= bucket_3 OR c_name = bucket_2 OR c_address > bucket_4 AND c_phone > bucket_4
+FROM orders , nation , lineitem SELECT o_clerk , l_linenumber WHERE n_comment >= bucket_1 OR l_quantity = bucket_0
+FROM nation SELECT n_nationkey
+FROM orders , lineitem SELECT l_shipinstruct WHERE l_discount <= bucket_4 AND l_shipinstruct > bucket_4 AND o_custkey = bucket_0 OR o_totalprice <= bucket_3 OR l_tax < bucket_3 OR o_comment < bucket_3 AND o_custkey < bucket_2 AND o_shippriority <= bucket_3 OR l_shipdate > bucket_3
+FROM lineitem SELECT l_shipinstruct WHERE l_quantity >= bucket_4 AND l_quantity >= bucket_1
+FROM supplier , orders ,  nation SELECT s_nationkey , s_suppkey , s_name WHERE o_orderstatus != bucket_2
+FROM lineitem , supplier , orders SELECT o_orderdate , l_returnflag , l_suppkey
+FROM part , partsupp , customer SELECT p_retailprice WHERE p_brand >= bucket_1 OR ps_suppkey = bucket_4
+FROM supplier SELECT s_comment
+FROM customer , supplier SELECT c_name WHERE c_comment = bucket_2 AND s_name > bucket_3 OR c_phone = bucket_2
+FROM supplier SELECT s_address WHERE s_comment <= bucket_1 OR s_suppkey < bucket_1 OR s_comment <= bucket_1
+FROM customer SELECT c_name WHERE c_custkey > bucket_0 AND c_phone <= bucket_4 OR c_comment > bucket_1
+FROM lineitem , orders SELECT l_returnflag WHERE l_quantity >= bucket_4 AND o_totalprice >= bucket_4 OR l_commitdate > bucket_1 OR l_linenumber < bucket_2 OR l_partkey < bucket_3 AND o_clerk > bucket_0 OR l_linenumber = bucket_0 AND o_orderkey <= bucket_4
+FROM supplier SELECT s_nationkey WHERE s_nationkey != bucket_3
+FROM orders , nation SELECT o_orderkey
+FROM lineitem , orders SELECT l_partkey WHERE o_orderpriority < bucket_1 OR l_shipmode < bucket_3 OR l_linestatus = bucket_1 AND l_linestatus = bucket_1 AND l_commitdate <= bucket_0 AND o_orderdate <= bucket_0
+FROM supplier SELECT s_address WHERE s_nationkey >= bucket_1 AND s_nationkey > bucket_2
+FROM lineitem , customer SELECT l_shipmode
+FROM partsupp , orders , part SELECT o_orderpriority
+FROM lineitem , region , supplier SELECT s_name
+FROM part , customer SELECT c_custkey
+FROM nation , orders SELECT o_custkey WHERE o_comment > bucket_1
+FROM region , customer SELECT c_nationkey , c_acctbal
+FROM nation SELECT n_comment WHERE n_name != bucket_2 AND n_nationkey = bucket_2
+FROM supplier , nation SELECT s_acctbal , n_regionkey , n_nationkey WHERE s_suppkey > bucket_4
+FROM region , lineitem , partsupp SELECT l_linenumber , l_linestatus
+FROM customer , supplier SELECT c_comment
+FROM orders SELECT o_totalprice , o_orderpriority , o_orderkey
+FROM supplier , nation SELECT s_suppkey , n_nationkey WHERE s_address >= bucket_3
+FROM region SELECT r_name WHERE r_regionkey <= bucket_4 AND r_regionkey > bucket_1 OR r_comment > bucket_1 OR r_comment != bucket_3
+FROM part SELECT p_mfgr
+FROM lineitem SELECT l_orderkey WHERE l_linenumber < bucket_2 AND l_tax >= bucket_2
+FROM customer , supplier SELECT s_nationkey
+FROM nation SELECT n_regionkey , n_name , n_comment WHERE n_name != bucket_0 AND n_nationkey <= bucket_1 AND n_name <= bucket_2
+FROM region SELECT r_regionkey WHERE r_name <= bucket_3
+FROM nation , partsupp , region SELECT ps_partkey
+FROM customer SELECT c_comment
+FROM lineitem , customer , part SELECT p_comment
+FROM part , lineitem SELECT l_tax
+FROM partsupp SELECT ps_comment , ps_partkey , ps_suppkey , ps_supplycost
+FROM nation SELECT n_nationkey WHERE n_comment <= bucket_4 AND n_nationkey <= bucket_4
+FROM part SELECT p_retailprice WHERE p_container <= bucket_0 OR p_size > bucket_1 OR p_type != bucket_0 AND p_retailprice = bucket_3 AND p_type <= bucket_0
+FROM lineitem , customer SELECT l_quantity WHERE l_shipmode >= bucket_3 AND l_partkey <= bucket_2 OR l_quantity < bucket_3 OR c_nationkey >= bucket_4 AND l_extendedprice = bucket_2 AND l_shipinstruct < bucket_0
+FROM supplier SELECT s_address
+FROM customer , region SELECT c_nationkey , c_address , r_name
+FROM customer , part , region SELECT c_custkey
+FROM partsupp , part SELECT ps_suppkey
+FROM lineitem , nation SELECT l_receiptdate
+FROM orders , region SELECT o_orderkey
+FROM nation SELECT n_regionkey WHERE n_name <= bucket_0 OR n_nationkey <= bucket_1 AND n_nationkey <= bucket_1
+FROM partsupp SELECT ps_suppkey
+FROM lineitem SELECT l_comment , l_discount , l_receiptdate , l_commitdate
+FROM supplier , region , part SELECT r_comment WHERE s_suppkey <= bucket_3 AND p_partkey > bucket_4 OR s_name <= bucket_4 AND p_mfgr < bucket_1
+FROM part SELECT p_name
+FROM orders SELECT o_orderkey , o_totalprice , o_custkey , o_orderdate WHERE o_orderdate <= bucket_4
+FROM region SELECT r_regionkey
+FROM lineitem SELECT l_shipmode
+FROM supplier SELECT s_name
+FROM nation SELECT n_comment , n_regionkey
+FROM region SELECT r_name , r_regionkey WHERE r_name < bucket_2 OR r_regionkey < bucket_1 OR r_regionkey >= bucket_1 OR r_comment <= bucket_4 AND r_regionkey <= bucket_0 OR r_regionkey > bucket_3
+FROM customer , supplier SELECT c_address WHERE s_acctbal >= bucket_4 AND c_mktsegment != bucket_0 AND c_address = bucket_0 AND c_address > bucket_4
+FROM region SELECT r_regionkey WHERE r_regionkey > bucket_4 OR r_name > bucket_1
+FROM supplier , orders , partsupp SELECT o_comment , o_orderkey WHERE ps_availqty < bucket_3 AND s_address = bucket_2 OR s_phone <= bucket_3 AND s_nationkey >= bucket_4 OR s_acctbal = bucket_1 OR o_orderkey > bucket_4
+FROM partsupp , orders SELECT o_orderkey , ps_supplycost , ps_comment , o_custkey
+FROM nation , customer , partsupp SELECT ps_partkey WHERE ps_comment < bucket_0 OR n_comment <= bucket_0 AND c_address >= bucket_3 OR c_name = bucket_3 OR ps_suppkey <= bucket_3
+FROM partsupp SELECT ps_comment
+FROM orders , part SELECT p_mfgr , p_container
+FROM customer SELECT c_acctbal WHERE c_acctbal >= bucket_3 OR c_custkey >= bucket_4
+FROM supplier , customer , nation SELECT c_comment
+FROM customer SELECT c_name , c_comment WHERE c_nationkey < bucket_2 OR c_nationkey < bucket_0 AND c_nationkey = bucket_1 OR c_comment != bucket_3 OR c_name = bucket_1 OR c_custkey > bucket_2 AND c_mktsegment <= bucket_3 OR c_name >= bucket_3 AND c_custkey <= bucket_3
+FROM orders , partsupp , nation SELECT n_comment , ps_supplycost WHERE n_nationkey != bucket_3 AND n_regionkey = bucket_2 AND o_orderpriority >= bucket_3 AND n_comment < bucket_4
+FROM nation , supplier SELECT n_comment
+FROM lineitem , orders SELECT l_tax
+FROM orders SELECT o_comment , o_custkey
+FROM nation , part ,  supplier SELECT s_suppkey , n_name WHERE s_comment != bucket_1
+FROM orders , supplier , partsupp SELECT s_nationkey , s_address
+FROM orders , region , supplier SELECT r_regionkey WHERE r_comment >= bucket_2 OR o_orderdate >= bucket_1 AND s_name <= bucket_1 AND o_clerk = bucket_0 OR s_nationkey < bucket_4 AND s_suppkey != bucket_4 OR o_totalprice >= bucket_4
+FROM orders , supplier , lineitem SELECT o_orderpriority , o_orderkey
+FROM part , orders , customer SELECT p_container WHERE p_type = bucket_4 AND o_orderkey <= bucket_3 OR p_type > bucket_4
+FROM customer SELECT c_address WHERE c_custkey < bucket_0 OR c_custkey != bucket_2
+FROM lineitem , nation SELECT l_receiptdate
+FROM part SELECT p_size WHERE p_retailprice != bucket_0 OR p_mfgr != bucket_0 AND p_container != bucket_0 OR p_partkey <= bucket_1
+FROM supplier SELECT s_comment WHERE s_name = bucket_0
+FROM customer SELECT c_acctbal , c_nationkey WHERE c_address >= bucket_2
+FROM lineitem SELECT l_shipdate WHERE l_suppkey >= bucket_3
+FROM region SELECT r_comment WHERE r_comment > bucket_1 OR r_regionkey > bucket_0
+FROM supplier , nation , customer SELECT c_acctbal , c_nationkey
+FROM customer , partsupp ,  part SELECT ps_availqty
+FROM partsupp SELECT ps_partkey WHERE ps_suppkey >= bucket_3
+FROM orders SELECT o_comment WHERE o_totalprice < bucket_1 OR o_orderdate != bucket_2 AND o_shippriority < bucket_1 AND o_orderstatus != bucket_3 AND o_orderpriority < bucket_4 OR o_custkey >= bucket_1 OR o_comment = bucket_1 OR o_orderkey <= bucket_3 OR o_orderdate != bucket_3 OR o_clerk != bucket_1 AND o_orderpriority = bucket_2 OR o_orderpriority != bucket_2
+FROM customer , supplier SELECT c_custkey
+FROM lineitem , supplier , region SELECT s_comment WHERE l_returnflag != bucket_0 OR l_shipmode < bucket_4 AND l_discount != bucket_3 AND l_shipinstruct < bucket_3 OR s_phone = bucket_4 AND l_shipmode != bucket_4 AND l_receiptdate >= bucket_2
+FROM customer , orders SELECT o_orderdate WHERE c_acctbal > bucket_2 OR o_orderkey > bucket_2 AND o_orderpriority != bucket_1
+FROM supplier , nation , region SELECT r_name
+FROM supplier SELECT s_suppkey
+FROM supplier SELECT s_suppkey , s_acctbal WHERE s_nationkey <= bucket_1
+FROM region SELECT r_comment , r_regionkey WHERE r_regionkey < bucket_2 AND r_regionkey = bucket_0
+FROM orders , nation SELECT o_comment
+FROM customer SELECT c_name
+FROM customer SELECT c_comment , c_phone WHERE c_acctbal = bucket_3
+FROM customer , orders SELECT o_orderstatus , c_address
+FROM part SELECT p_mfgr WHERE p_mfgr = bucket_2
+FROM nation , partsupp SELECT ps_partkey
+FROM region , nation , partsupp SELECT n_comment
+FROM nation SELECT n_name WHERE n_nationkey >= bucket_2 AND n_regionkey > bucket_0
+FROM nation SELECT n_name
+FROM partsupp SELECT ps_comment
+FROM lineitem SELECT l_linenumber WHERE l_comment > bucket_3 AND l_commitdate < bucket_3 OR l_shipmode != bucket_2
+FROM region SELECT r_name WHERE r_comment != bucket_4
+FROM customer , partsupp , supplier SELECT s_suppkey WHERE s_comment < bucket_4
+FROM nation SELECT n_nationkey
+FROM region SELECT r_regionkey
+FROM orders , lineitem SELECT l_shipdate WHERE l_shipmode = bucket_3
+FROM partsupp SELECT ps_partkey WHERE ps_suppkey >= bucket_2 AND ps_availqty = bucket_0
+FROM orders SELECT o_totalprice
+FROM partsupp SELECT ps_supplycost WHERE ps_availqty < bucket_0 AND ps_comment = bucket_4 OR ps_availqty > bucket_4
+FROM orders SELECT o_orderkey
+FROM partsupp SELECT ps_partkey , ps_supplycost WHERE ps_partkey >= bucket_3
+FROM region SELECT r_name WHERE r_name = bucket_4
+FROM part , orders , supplier SELECT p_mfgr
+FROM orders , customer SELECT c_comment WHERE o_comment != bucket_0 AND c_acctbal != bucket_0
+FROM supplier , part , lineitem SELECT l_extendedprice
+FROM supplier , customer SELECT s_address WHERE c_acctbal >= bucket_3
+FROM supplier SELECT s_nationkey , s_address
+FROM lineitem , partsupp , customer SELECT l_extendedprice
+FROM partsupp , part , customer SELECT ps_supplycost WHERE c_address = bucket_0 AND p_type <= bucket_1 OR c_phone = bucket_0
+FROM customer SELECT c_custkey
+FROM partsupp , orders , nation SELECT o_custkey , o_comment WHERE o_orderkey = bucket_3
+FROM customer , supplier SELECT s_nationkey WHERE c_phone <= bucket_1 OR c_nationkey != bucket_0 OR c_address >= bucket_3
+FROM part , supplier , nation SELECT p_size WHERE n_nationkey >= bucket_4
+FROM lineitem SELECT l_orderkey WHERE l_returnflag = bucket_3 AND l_shipinstruct = bucket_2 AND l_shipdate = bucket_4
+FROM partsupp , nation , lineitem SELECT l_suppkey
+FROM orders , partsupp , lineitem SELECT o_custkey WHERE o_comment = bucket_3 OR o_orderstatus = bucket_0
+FROM nation SELECT n_name WHERE n_comment < bucket_4 OR n_comment = bucket_4
+FROM orders ,  partsupp , part SELECT p_type WHERE ps_comment = bucket_0 OR o_clerk = bucket_1 AND p_type = bucket_2 AND ps_suppkey > bucket_2
+FROM lineitem SELECT l_shipmode
+FROM partsupp SELECT ps_availqty
+FROM lineitem SELECT l_extendedprice WHERE l_comment > bucket_1 OR l_extendedprice < bucket_0 AND l_discount < bucket_3
+FROM supplier SELECT s_address , s_suppkey
+FROM customer SELECT c_acctbal WHERE c_address <= bucket_4 OR c_mktsegment = bucket_3
+FROM customer , supplier , part SELECT s_comment
+FROM partsupp SELECT ps_comment
+FROM supplier SELECT s_suppkey , s_name
+FROM nation ,  part , lineitem SELECT l_suppkey
+FROM nation , lineitem , region SELECT l_shipdate WHERE l_shipinstruct = bucket_1 OR l_discount < bucket_3 OR l_linenumber > bucket_0
+FROM lineitem , supplier , customer SELECT c_custkey , l_commitdate WHERE l_quantity <= bucket_3
+FROM partsupp SELECT ps_partkey
+FROM lineitem SELECT l_suppkey WHERE l_quantity > bucket_3 AND l_extendedprice > bucket_4 OR l_shipinstruct > bucket_4 OR l_comment <= bucket_0 OR l_suppkey = bucket_4 AND l_shipdate > bucket_1
+FROM part , region SELECT p_name WHERE p_container > bucket_0 AND r_regionkey = bucket_3 OR p_mfgr != bucket_3 OR p_brand >= bucket_0
+FROM customer SELECT c_comment WHERE c_address <= bucket_3 OR c_nationkey = bucket_3 OR c_phone >= bucket_3
+FROM partsupp SELECT ps_availqty
+FROM nation SELECT n_comment WHERE n_nationkey > bucket_2 OR n_nationkey = bucket_0 AND n_nationkey > bucket_0
+FROM supplier , nation SELECT s_comment WHERE n_nationkey != bucket_0 AND s_suppkey = bucket_4
+FROM lineitem SELECT l_quantity WHERE l_comment < bucket_0 OR l_shipmode < bucket_1
+FROM supplier SELECT s_phone , s_suppkey
+FROM customer SELECT c_mktsegment , c_address WHERE c_acctbal <= bucket_4 OR c_mktsegment = bucket_2
+FROM orders , nation SELECT o_clerk
+FROM lineitem SELECT l_shipinstruct
+FROM supplier SELECT s_name , s_phone
+FROM supplier SELECT s_nationkey
+FROM supplier ,  orders SELECT s_phone WHERE o_orderkey < bucket_2
+FROM partsupp SELECT ps_comment WHERE ps_availqty > bucket_3 OR ps_supplycost = bucket_3 OR ps_availqty >= bucket_3
+FROM orders , part ,  partsupp SELECT o_custkey WHERE o_clerk >= bucket_3 OR o_totalprice = bucket_2 OR p_mfgr > bucket_0
+FROM part , nation , customer SELECT n_nationkey
+FROM customer SELECT c_custkey WHERE c_comment <= bucket_1 AND c_mktsegment <= bucket_3 OR c_phone != bucket_1 AND c_custkey < bucket_0
+FROM partsupp , customer , supplier SELECT c_name WHERE s_comment = bucket_0 AND c_name < bucket_2 AND s_phone != bucket_0 AND s_nationkey <= bucket_1
+FROM customer SELECT c_custkey , c_name
+FROM partsupp SELECT ps_availqty
+FROM partsupp SELECT ps_supplycost
+FROM lineitem SELECT l_quantity
+FROM lineitem SELECT l_shipinstruct
+FROM lineitem SELECT l_shipmode , l_tax
+FROM nation , region SELECT n_name WHERE r_comment >= bucket_0 AND n_regionkey < bucket_2 AND n_nationkey = bucket_4 OR n_nationkey >= bucket_0
+FROM nation , supplier , partsupp SELECT s_name WHERE n_nationkey > bucket_4 OR n_name != bucket_3 OR ps_partkey < bucket_1
+FROM orders SELECT o_custkey
+FROM partsupp SELECT ps_supplycost WHERE ps_suppkey < bucket_4
+FROM lineitem SELECT l_extendedprice , l_commitdate WHERE l_discount = bucket_1
+FROM orders , region SELECT o_orderkey , o_shippriority WHERE o_orderstatus < bucket_4 AND o_custkey > bucket_1 OR r_comment < bucket_2 AND r_regionkey = bucket_0
+FROM supplier SELECT s_acctbal
+FROM customer , nation SELECT c_acctbal , c_custkey , n_name , n_regionkey WHERE c_phone <= bucket_4
+FROM lineitem SELECT l_discount WHERE l_linenumber >= bucket_4 OR l_tax < bucket_0 AND l_receiptdate != bucket_1
+FROM customer SELECT c_nationkey
+FROM part , supplier SELECT p_container , s_address WHERE s_comment >= bucket_4 AND p_partkey < bucket_3 AND s_nationkey <= bucket_2 AND p_mfgr != bucket_0 AND p_retailprice < bucket_1 AND p_type != bucket_4
+FROM orders SELECT o_orderstatus WHERE o_orderstatus = bucket_4 AND o_totalprice <= bucket_4 AND o_clerk <= bucket_4 AND o_orderdate <= bucket_2
+FROM customer SELECT c_acctbal
+FROM nation SELECT n_comment
+FROM part , customer , partsupp SELECT c_custkey
+FROM customer SELECT c_custkey
+FROM supplier SELECT s_suppkey , s_name , s_acctbal
+FROM lineitem SELECT l_shipmode , l_quantity WHERE l_shipmode = bucket_3 OR l_quantity <= bucket_2 OR l_orderkey >= bucket_4 AND l_comment < bucket_0 AND l_shipinstruct = bucket_2 AND l_returnflag >= bucket_3 OR l_shipinstruct > bucket_3 OR l_orderkey >= bucket_3 OR l_extendedprice != bucket_0 OR l_orderkey = bucket_0 OR l_extendedprice > bucket_1 OR l_suppkey = bucket_4 OR l_linestatus >= bucket_0
+FROM part SELECT p_partkey
+FROM lineitem , customer , supplier SELECT c_acctbal , l_tax WHERE c_address != bucket_0 OR c_name < bucket_4 AND l_partkey >= bucket_2
+FROM customer , part SELECT p_retailprice
+FROM supplier , partsupp , lineitem SELECT l_shipinstruct , l_returnflag
+FROM part SELECT p_partkey
+FROM part SELECT p_comment , p_type , p_container
+FROM part , orders , partsupp SELECT p_comment
+FROM orders SELECT o_orderkey WHERE o_orderpriority = bucket_3 AND o_shippriority != bucket_1 OR o_totalprice >= bucket_0 OR o_custkey != bucket_4 AND o_totalprice = bucket_4 AND o_comment < bucket_3 OR o_totalprice > bucket_0 AND o_clerk >= bucket_0
+FROM customer , supplier SELECT c_address
+FROM partsupp SELECT ps_availqty , ps_partkey , ps_comment
+FROM lineitem , supplier SELECT l_shipdate WHERE l_shipmode >= bucket_1 OR l_returnflag <= bucket_2 OR l_receiptdate <= bucket_1
+FROM customer SELECT c_acctbal WHERE c_acctbal > bucket_0 AND c_custkey >= bucket_4 OR c_custkey != bucket_3 OR c_comment > bucket_0 AND c_phone >= bucket_1 AND c_name != bucket_4
+FROM nation SELECT n_regionkey WHERE n_regionkey > bucket_4
+FROM region , customer , lineitem SELECT l_receiptdate WHERE l_extendedprice != bucket_0 AND r_name < bucket_1 AND l_shipdate >= bucket_1 OR l_shipmode >= bucket_1 OR l_receiptdate <= bucket_1
+FROM customer , lineitem SELECT l_suppkey , c_nationkey , l_orderkey
+FROM orders SELECT o_totalprice WHERE o_comment > bucket_3 AND o_shippriority >= bucket_3 AND o_custkey != bucket_2
+FROM customer SELECT c_address WHERE c_name <= bucket_0 OR c_custkey = bucket_2 AND c_custkey < bucket_0 OR c_name < bucket_2 AND c_mktsegment = bucket_3 OR c_custkey < bucket_0 AND c_mktsegment = bucket_3 AND c_comment >= bucket_0 AND c_nationkey != bucket_4
+FROM part SELECT p_name , p_brand WHERE p_mfgr >= bucket_1 OR p_type <= bucket_4
+FROM partsupp SELECT ps_availqty WHERE ps_availqty < bucket_0 AND ps_supplycost = bucket_0
+FROM region SELECT r_comment
+FROM customer SELECT c_address WHERE c_nationkey < bucket_1
+FROM customer SELECT c_custkey , c_address WHERE c_mktsegment != bucket_3 AND c_phone = bucket_3 OR c_comment >= bucket_3 AND c_acctbal < bucket_4
+FROM part SELECT p_partkey WHERE p_name = bucket_0
+FROM supplier SELECT s_comment , s_nationkey WHERE s_acctbal <= bucket_4 OR s_nationkey < bucket_2 AND s_address < bucket_3 AND s_phone > bucket_4 OR s_name > bucket_2 OR s_phone = bucket_3
+FROM orders SELECT o_custkey
+FROM orders , part , region SELECT o_clerk WHERE o_custkey >= bucket_4 AND p_container != bucket_1 OR p_comment = bucket_3
+FROM orders SELECT o_orderpriority WHERE o_orderstatus >= bucket_1 OR o_orderdate = bucket_1
+FROM orders , partsupp SELECT ps_supplycost
+FROM lineitem , nation ,  part SELECT l_linestatus WHERE l_shipmode < bucket_2
+FROM lineitem , region SELECT l_shipmode , l_comment WHERE l_extendedprice <= bucket_4 AND l_suppkey != bucket_1 OR l_shipmode < bucket_0 AND l_extendedprice > bucket_0 AND r_comment != bucket_2 OR l_shipinstruct >= bucket_1
+FROM region , partsupp , customer SELECT ps_availqty
+FROM region SELECT r_comment WHERE r_comment >= bucket_3 OR r_regionkey >= bucket_3 OR r_comment >= bucket_1 AND r_regionkey > bucket_4
+FROM region SELECT r_name WHERE r_comment != bucket_0 AND r_name <= bucket_4 OR r_regionkey = bucket_0 AND r_regionkey < bucket_2 AND r_comment != bucket_1
+FROM supplier SELECT s_acctbal WHERE s_address != bucket_2 AND s_acctbal = bucket_1 OR s_comment <= bucket_2
+FROM lineitem SELECT l_tax , l_shipmode WHERE l_suppkey = bucket_1 AND l_shipinstruct <= bucket_4 AND l_extendedprice >= bucket_2 OR l_suppkey >= bucket_2 OR l_returnflag > bucket_4 OR l_returnflag < bucket_4 OR l_tax != bucket_4
+FROM part SELECT p_type
+FROM nation SELECT n_comment WHERE n_name = bucket_1 OR n_nationkey != bucket_3 OR n_nationkey != bucket_2
+FROM lineitem , nation SELECT l_partkey WHERE l_linestatus > bucket_1
+FROM lineitem , region , orders SELECT o_orderkey
+FROM lineitem , region , orders SELECT o_orderstatus , l_discount
+FROM part , region , nation SELECT r_name WHERE p_type < bucket_1 AND p_name = bucket_1
+FROM supplier , part SELECT s_suppkey , p_type , p_size
+FROM customer , lineitem , region SELECT c_mktsegment WHERE l_discount <= bucket_3 OR c_name < bucket_4 AND l_shipdate > bucket_4 AND l_shipdate != bucket_4 AND l_linestatus > bucket_0 AND c_acctbal != bucket_2
+FROM customer , partsupp , lineitem SELECT l_shipinstruct WHERE l_tax >= bucket_0 AND l_partkey >= bucket_2 AND l_shipdate != bucket_0
+FROM lineitem SELECT l_shipmode WHERE l_shipdate <= bucket_4 AND l_discount = bucket_4 OR l_orderkey > bucket_3
+FROM customer , part ,  orders SELECT p_type
+FROM region SELECT r_comment
+FROM part , customer SELECT p_container
+FROM region , customer SELECT r_name , c_mktsegment WHERE c_address > bucket_4
+FROM nation SELECT n_name WHERE n_comment <= bucket_4 AND n_comment >= bucket_3
+FROM partsupp , region SELECT r_name WHERE ps_comment <= bucket_2 OR r_regionkey < bucket_1 OR ps_suppkey != bucket_4 AND ps_partkey < bucket_0 AND r_name > bucket_1 AND ps_availqty = bucket_3 OR r_name < bucket_1 OR ps_availqty = bucket_1 OR ps_partkey >= bucket_1 AND ps_supplycost < bucket_4
+FROM region , partsupp SELECT ps_suppkey , r_regionkey WHERE r_comment < bucket_3 OR ps_partkey != bucket_1 AND r_name != bucket_0
+FROM nation , lineitem SELECT l_quantity
+FROM orders , region SELECT o_clerk WHERE o_comment > bucket_2
+FROM region SELECT r_name WHERE r_comment >= bucket_4
+FROM part , partsupp SELECT ps_suppkey WHERE ps_partkey > bucket_2 AND p_type = bucket_4
+FROM orders , customer , part SELECT o_custkey , p_retailprice WHERE p_retailprice < bucket_4 OR p_container >= bucket_4 OR c_address <= bucket_4
+FROM supplier , nation , customer SELECT c_comment , s_phone WHERE c_custkey < bucket_3 OR n_regionkey != bucket_0 OR c_address = bucket_1 AND c_address != bucket_3
+FROM partsupp SELECT ps_supplycost WHERE ps_partkey >= bucket_4 OR ps_availqty >= bucket_2
+FROM supplier SELECT s_phone
+FROM part SELECT p_container WHERE p_name > bucket_4
+FROM lineitem SELECT l_shipinstruct , l_receiptdate WHERE l_extendedprice > bucket_2
+FROM nation SELECT n_nationkey WHERE n_name < bucket_0 AND n_nationkey > bucket_3
+FROM orders SELECT o_orderdate WHERE o_orderdate < bucket_2 OR o_clerk < bucket_1 OR o_orderdate = bucket_0
+FROM partsupp , customer SELECT ps_availqty
+FROM supplier SELECT s_nationkey
+FROM part , nation , partsupp SELECT p_partkey , p_name
+FROM region ,  customer , partsupp SELECT ps_partkey
+FROM orders SELECT o_comment , o_orderstatus WHERE o_comment <= bucket_2 OR o_orderpriority = bucket_0 OR o_clerk >= bucket_0
+FROM region , partsupp , part SELECT r_name
+FROM nation SELECT n_name
+FROM partsupp , lineitem , nation SELECT l_tax
+FROM orders SELECT o_shippriority , o_comment WHERE o_orderpriority < bucket_1
+FROM partsupp , supplier SELECT s_address WHERE ps_partkey != bucket_1 AND s_suppkey > bucket_1 OR ps_suppkey > bucket_4
+FROM region SELECT r_name
+FROM partsupp SELECT ps_supplycost WHERE ps_comment >= bucket_2 OR ps_suppkey != bucket_4 OR ps_suppkey != bucket_4 AND ps_partkey <= bucket_4
+FROM supplier SELECT s_comment , s_name WHERE s_comment <= bucket_0 AND s_phone = bucket_3 AND s_name != bucket_4 AND s_comment >= bucket_4
+FROM lineitem SELECT l_comment WHERE l_returnflag != bucket_0 AND l_orderkey < bucket_4
+FROM lineitem , part SELECT l_linenumber WHERE p_partkey <= bucket_4 AND p_comment != bucket_2 AND p_brand <= bucket_4
+FROM customer , region , lineitem SELECT l_tax WHERE l_quantity != bucket_2 OR l_shipdate <= bucket_1
+FROM nation , customer , supplier SELECT c_nationkey , s_nationkey
+FROM partsupp SELECT ps_comment
+FROM lineitem , region , partsupp SELECT r_regionkey , l_shipinstruct , ps_availqty , l_partkey WHERE r_regionkey = bucket_0
+FROM lineitem , region SELECT l_linenumber WHERE l_quantity < bucket_0 OR l_returnflag = bucket_0 AND l_receiptdate != bucket_3
+FROM part SELECT p_brand
+FROM part SELECT p_partkey WHERE p_retailprice <= bucket_2 AND p_partkey >= bucket_1 OR p_type < bucket_1 AND p_type >= bucket_2 AND p_mfgr <= bucket_2
+FROM partsupp , customer SELECT c_acctbal
+FROM region , nation SELECT r_regionkey
+FROM region , supplier , customer SELECT c_mktsegment , c_address
+FROM customer SELECT c_nationkey WHERE c_name < bucket_1 OR c_name >= bucket_4 AND c_name > bucket_0 AND c_acctbal >= bucket_0 AND c_phone < bucket_1 OR c_acctbal != bucket_0 AND c_comment < bucket_3 OR c_acctbal > bucket_1 OR c_phone >= bucket_2
+FROM lineitem SELECT l_linenumber , l_comment , l_orderkey
+FROM nation SELECT n_regionkey WHERE n_regionkey >= bucket_2 AND n_comment = bucket_1 OR n_nationkey = bucket_4 OR n_regionkey != bucket_4
+FROM partsupp SELECT ps_availqty , ps_suppkey
+FROM lineitem SELECT l_shipdate
+FROM part , region SELECT p_size
+FROM lineitem , part SELECT l_orderkey
+FROM region SELECT r_comment , r_regionkey
+FROM part , customer SELECT p_brand , p_size
+FROM supplier , orders , nation SELECT o_orderpriority , o_orderkey
+FROM nation , customer SELECT c_phone
+FROM partsupp SELECT ps_availqty WHERE ps_supplycost = bucket_1 AND ps_partkey = bucket_0
+FROM part SELECT p_partkey WHERE p_size != bucket_3 AND p_comment >= bucket_1
+FROM orders , part SELECT p_container WHERE o_custkey >= bucket_4
+FROM region SELECT r_name
+FROM customer , orders , lineitem SELECT l_tax WHERE o_orderkey != bucket_1
+FROM partsupp SELECT ps_availqty
+FROM nation , orders SELECT o_totalprice WHERE o_orderdate = bucket_0 OR o_comment = bucket_0 OR o_clerk <= bucket_3 OR n_nationkey > bucket_3 AND o_orderpriority <= bucket_2 AND o_totalprice > bucket_0 OR n_regionkey <= bucket_3 AND n_regionkey < bucket_4 AND o_custkey <= bucket_0
+FROM nation SELECT n_nationkey
+FROM orders SELECT o_orderstatus
+FROM partsupp , lineitem SELECT l_returnflag WHERE ps_comment < bucket_4 OR l_comment < bucket_0 OR l_tax < bucket_4 OR l_discount != bucket_2 AND l_comment < bucket_1
+FROM part SELECT p_mfgr
+FROM partsupp , nation SELECT n_comment , n_regionkey
+FROM nation , customer , orders SELECT n_regionkey , c_name WHERE c_name >= bucket_4 OR o_orderdate > bucket_1
+FROM supplier SELECT s_acctbal WHERE s_phone = bucket_0 AND s_suppkey > bucket_3 OR s_comment < bucket_4
+FROM orders SELECT o_orderdate WHERE o_shippriority != bucket_0 AND o_orderstatus <= bucket_0
+FROM customer , part , supplier SELECT p_type WHERE s_suppkey <= bucket_1 AND s_comment <= bucket_1 OR s_suppkey = bucket_1
+FROM partsupp SELECT ps_comment WHERE ps_comment = bucket_0 OR ps_suppkey != bucket_3
+FROM region SELECT r_name WHERE r_regionkey != bucket_4 OR r_name < bucket_2 AND r_regionkey != bucket_2 AND r_comment > bucket_2 OR r_regionkey != bucket_4
+FROM part , region , orders SELECT o_shippriority , o_orderpriority , o_totalprice WHERE o_comment <= bucket_3
+FROM supplier SELECT s_suppkey WHERE s_phone <= bucket_2
+FROM partsupp SELECT ps_supplycost WHERE ps_comment >= bucket_3
+FROM lineitem SELECT l_partkey
+FROM supplier , lineitem SELECT s_name
+FROM region SELECT r_comment
+FROM nation SELECT n_nationkey
+FROM orders SELECT o_comment , o_orderdate , o_orderpriority WHERE o_orderkey < bucket_3 AND o_clerk != bucket_0 AND o_shippriority != bucket_2 AND o_orderpriority = bucket_2 OR o_orderkey = bucket_0
+FROM customer SELECT c_address WHERE c_acctbal > bucket_4
+FROM nation , orders , customer SELECT n_comment
+FROM lineitem , orders SELECT o_comment WHERE o_custkey != bucket_3 OR l_partkey >= bucket_3
+FROM lineitem SELECT l_extendedprice
+FROM supplier SELECT s_phone WHERE s_nationkey > bucket_2 OR s_name < bucket_4
+FROM nation SELECT n_regionkey WHERE n_nationkey <= bucket_1
+FROM customer SELECT c_mktsegment
+FROM region SELECT r_comment WHERE r_name > bucket_2
+FROM supplier , nation , lineitem SELECT n_nationkey , l_tax
+FROM orders SELECT o_orderdate , o_orderpriority WHERE o_custkey < bucket_4 OR o_orderpriority = bucket_3
+FROM part , lineitem SELECT p_container , l_linestatus
+FROM partsupp , supplier , region SELECT ps_partkey , ps_suppkey , s_phone WHERE s_nationkey > bucket_3 OR ps_supplycost < bucket_1 OR s_nationkey = bucket_2
+FROM customer SELECT c_nationkey , c_address WHERE c_phone < bucket_4
+FROM region , supplier ,  partsupp SELECT s_acctbal WHERE r_comment = bucket_0 OR ps_availqty = bucket_2 OR ps_suppkey = bucket_4 AND s_nationkey >= bucket_3 OR s_suppkey <= bucket_1 AND r_comment <= bucket_0 AND s_name >= bucket_0 AND ps_availqty <= bucket_3
+FROM part SELECT p_retailprice
+FROM partsupp SELECT ps_supplycost
+FROM lineitem SELECT l_extendedprice
+FROM lineitem SELECT l_shipmode
+FROM partsupp , lineitem , part SELECT l_orderkey
+FROM partsupp SELECT ps_partkey
+FROM region SELECT r_regionkey WHERE r_comment > bucket_4 OR r_name = bucket_3 AND r_name <= bucket_2 AND r_comment < bucket_2 OR r_comment <= bucket_4 OR r_name < bucket_2 OR r_comment != bucket_0 AND r_name < bucket_3 AND r_regionkey != bucket_0
+FROM customer , part , partsupp SELECT p_container
+FROM region , supplier , customer SELECT s_nationkey WHERE s_name != bucket_2 OR s_name < bucket_4 AND c_address >= bucket_4 AND c_comment > bucket_1 AND s_suppkey >= bucket_4
+FROM partsupp SELECT ps_supplycost , ps_suppkey , ps_comment , ps_partkey
+FROM part , lineitem , region SELECT l_shipdate WHERE p_name < bucket_4 OR l_shipinstruct >= bucket_0 OR r_name >= bucket_0 OR p_brand > bucket_0 OR p_mfgr < bucket_1 AND l_shipdate <= bucket_4 AND l_quantity < bucket_3
+FROM orders , customer , lineitem SELECT l_linenumber WHERE o_comment > bucket_1
+FROM partsupp SELECT ps_supplycost WHERE ps_comment < bucket_2 OR ps_comment = bucket_2
+FROM customer SELECT c_custkey
+FROM nation , supplier SELECT s_acctbal
+FROM orders SELECT o_custkey , o_totalprice
+FROM nation , supplier ,  customer SELECT s_name , n_comment
+FROM partsupp SELECT ps_supplycost , ps_suppkey WHERE ps_partkey >= bucket_1
+FROM customer SELECT c_phone
+FROM lineitem , nation SELECT l_extendedprice
+FROM part , lineitem SELECT l_quantity
+FROM nation ,  partsupp SELECT n_comment WHERE n_regionkey = bucket_3 OR n_regionkey > bucket_2
+FROM orders SELECT o_orderdate
+FROM customer , nation , part SELECT n_name WHERE c_address >= bucket_4 OR p_container = bucket_0 AND c_phone >= bucket_2 OR c_phone >= bucket_2 OR c_custkey != bucket_1 AND p_size = bucket_0
+FROM region , supplier SELECT s_comment WHERE s_name > bucket_3
+FROM supplier , partsupp , part SELECT s_suppkey , s_phone , s_comment
+FROM nation SELECT n_name WHERE n_name > bucket_0
+FROM customer SELECT c_custkey WHERE c_custkey <= bucket_3
+FROM region , customer , supplier SELECT c_nationkey WHERE c_mktsegment < bucket_0
+FROM supplier , part , region SELECT r_comment
+FROM customer , orders , lineitem SELECT c_address
+FROM part , lineitem , customer SELECT l_shipmode WHERE l_returnflag = bucket_1 AND c_nationkey >= bucket_2 OR p_brand <= bucket_3
+FROM region SELECT r_regionkey , r_name , r_comment WHERE r_comment >= bucket_0
+FROM lineitem SELECT l_linenumber , l_commitdate
+FROM region SELECT r_regionkey WHERE r_regionkey != bucket_3 OR r_comment != bucket_3
+FROM lineitem , customer , part SELECT p_brand WHERE l_shipdate != bucket_0 AND p_size < bucket_3 OR p_brand <= bucket_0
+FROM lineitem SELECT l_extendedprice
+FROM nation , lineitem , partsupp SELECT l_commitdate
+FROM lineitem ,  customer SELECT c_address , l_commitdate
+FROM partsupp , lineitem , part SELECT l_partkey
+FROM lineitem , customer SELECT l_discount WHERE l_comment = bucket_4
+FROM customer , region SELECT c_mktsegment WHERE c_acctbal >= bucket_4 OR r_regionkey < bucket_2 OR r_comment >= bucket_1
+FROM nation SELECT n_nationkey
+FROM supplier , nation , partsupp SELECT s_address WHERE s_nationkey = bucket_2 OR ps_partkey < bucket_3 OR s_nationkey <= bucket_3
+FROM supplier , nation , partsupp SELECT ps_suppkey , ps_availqty WHERE s_address = bucket_4 OR ps_partkey != bucket_1 OR s_phone = bucket_3
+FROM region SELECT r_comment WHERE r_name >= bucket_1 OR r_regionkey = bucket_0
+FROM orders SELECT o_orderdate WHERE o_shippriority = bucket_3 OR o_clerk > bucket_1 OR o_orderdate >= bucket_4
+FROM lineitem , nation , part SELECT l_returnflag
+FROM supplier , orders , customer SELECT c_mktsegment , c_custkey , c_name
+FROM part , region , nation SELECT p_name
+FROM region SELECT r_name
+FROM part , lineitem SELECT l_commitdate
+FROM lineitem , customer , partsupp SELECT l_suppkey , c_address WHERE ps_availqty = bucket_0
+FROM nation , supplier , region SELECT n_regionkey WHERE s_nationkey <= bucket_0 AND n_nationkey <= bucket_1
+FROM region , part , partsupp SELECT r_comment WHERE ps_comment > bucket_3
+FROM partsupp , region SELECT r_comment WHERE ps_comment != bucket_0
+FROM supplier , region SELECT s_name
+FROM customer , orders , lineitem SELECT o_orderstatus , c_nationkey , l_orderkey , l_quantity , l_extendedprice WHERE c_custkey <= bucket_0 OR c_comment != bucket_2
+FROM partsupp SELECT ps_suppkey , ps_availqty
+FROM region , part SELECT p_type , p_container , r_name WHERE p_mfgr > bucket_1
+FROM nation , customer , part SELECT p_name
+FROM nation , lineitem SELECT l_receiptdate
+FROM region , customer , partsupp SELECT ps_suppkey
+FROM customer , orders , partsupp SELECT ps_supplycost , ps_suppkey WHERE c_custkey >= bucket_1 OR c_acctbal >= bucket_0 OR c_acctbal >= bucket_4
+FROM lineitem , part SELECT p_container
+FROM supplier SELECT s_acctbal WHERE s_acctbal != bucket_4 OR s_suppkey <= bucket_4
+FROM nation , customer SELECT n_comment , c_mktsegment , c_custkey WHERE c_address != bucket_3
+FROM partsupp SELECT ps_suppkey
+FROM lineitem SELECT l_linestatus WHERE l_receiptdate < bucket_1 OR l_commitdate = bucket_4 AND l_receiptdate = bucket_0
+FROM lineitem , region , nation SELECT n_nationkey , l_suppkey , l_returnflag , n_name WHERE n_comment <= bucket_1 AND l_shipmode != bucket_0 AND n_nationkey < bucket_3 AND l_suppkey <= bucket_1 AND l_linenumber = bucket_1
+FROM supplier SELECT s_address WHERE s_acctbal != bucket_0 AND s_phone >= bucket_1
+FROM lineitem SELECT l_shipdate WHERE l_extendedprice > bucket_3
+FROM nation SELECT n_name WHERE n_nationkey = bucket_3 OR n_name >= bucket_4 OR n_comment > bucket_0 OR n_name > bucket_3 OR n_name != bucket_2 AND n_nationkey != bucket_2
+FROM region , orders , partsupp SELECT o_custkey
+FROM nation , lineitem , orders SELECT o_totalprice WHERE o_orderpriority = bucket_1
+FROM nation SELECT n_comment , n_name
+FROM partsupp SELECT ps_supplycost
+FROM customer , partsupp , nation SELECT c_name
+FROM region , orders SELECT o_shippriority
+FROM supplier SELECT s_acctbal , s_nationkey
+FROM orders SELECT o_orderkey WHERE o_comment >= bucket_0 AND o_custkey >= bucket_4 OR o_custkey != bucket_4 AND o_orderpriority != bucket_2 AND o_orderkey > bucket_2 OR o_custkey < bucket_2 AND o_orderdate >= bucket_2 AND o_comment != bucket_1 AND o_clerk >= bucket_3 OR o_orderstatus != bucket_0 OR o_clerk > bucket_4
+FROM orders , nation , partsupp SELECT o_clerk
+FROM partsupp SELECT ps_partkey
+FROM region , part , lineitem SELECT p_size
+FROM customer , supplier SELECT c_nationkey
+FROM supplier , nation , customer SELECT s_address , s_nationkey , c_mktsegment
+FROM supplier , partsupp SELECT s_acctbal WHERE ps_availqty < bucket_4 AND ps_supplycost = bucket_1 OR s_address = bucket_3 OR s_comment != bucket_2 AND s_name <= bucket_2 OR s_name != bucket_0 AND s_phone <= bucket_4
+FROM nation SELECT n_regionkey WHERE n_nationkey <= bucket_3
+FROM nation SELECT n_comment WHERE n_name = bucket_0 OR n_nationkey <= bucket_2
+FROM region , part , partsupp SELECT ps_availqty , p_type WHERE ps_supplycost != bucket_1 OR p_size < bucket_1 OR p_name >= bucket_1
+FROM lineitem , orders , customer SELECT l_returnflag WHERE l_shipmode >= bucket_0
+FROM partsupp SELECT ps_partkey WHERE ps_supplycost > bucket_1 AND ps_supplycost <= bucket_0 OR ps_partkey >= bucket_2
+FROM partsupp SELECT ps_availqty
+FROM part , lineitem SELECT l_discount
+FROM region , nation SELECT r_comment WHERE n_nationkey >= bucket_1 OR n_regionkey != bucket_0 AND n_name >= bucket_1 OR r_comment > bucket_2 OR r_name != bucket_2 AND r_comment = bucket_2 OR r_comment >= bucket_2 AND r_regionkey > bucket_3 AND r_comment > bucket_1 AND r_name != bucket_2 AND n_nationkey <= bucket_2 AND r_name <= bucket_3 OR n_nationkey = bucket_2 OR n_regionkey > bucket_4
+FROM supplier SELECT s_suppkey
+FROM nation SELECT n_regionkey
+FROM partsupp SELECT ps_availqty WHERE ps_supplycost = bucket_1
+FROM part SELECT p_type WHERE p_comment >= bucket_1 AND p_size < bucket_0 AND p_partkey >= bucket_2 AND p_brand != bucket_3 AND p_partkey >= bucket_2 OR p_mfgr > bucket_3
+FROM region SELECT r_comment WHERE r_regionkey > bucket_3
+FROM nation , supplier SELECT s_phone , n_nationkey
+FROM region , customer SELECT c_name
+FROM nation , region SELECT n_name , r_regionkey
+FROM nation , orders , region SELECT r_comment
+FROM nation SELECT n_regionkey
+FROM region , partsupp , part SELECT p_size WHERE ps_comment >= bucket_3
+FROM customer SELECT c_custkey
+FROM partsupp , customer , nation SELECT c_comment
+FROM customer SELECT c_name WHERE c_nationkey < bucket_4
+FROM supplier SELECT s_acctbal
+FROM part , partsupp , customer SELECT ps_suppkey WHERE p_container <= bucket_3 OR c_phone < bucket_0 OR ps_suppkey >= bucket_0 AND ps_partkey != bucket_2 AND c_custkey >= bucket_1 OR p_partkey < bucket_0
+FROM partsupp , region SELECT ps_availqty
+FROM partsupp ,  orders , supplier SELECT ps_suppkey WHERE o_custkey >= bucket_1 AND o_orderstatus != bucket_2
+FROM orders , customer SELECT c_acctbal WHERE o_comment != bucket_0 OR o_orderpriority != bucket_0
+FROM supplier , customer SELECT c_name WHERE c_mktsegment > bucket_4
+FROM nation SELECT n_comment WHERE n_nationkey > bucket_3 OR n_comment < bucket_2 OR n_comment >= bucket_3
+FROM customer , partsupp SELECT c_acctbal WHERE c_acctbal >= bucket_2 AND ps_supplycost != bucket_4 AND c_comment != bucket_3 OR ps_availqty > bucket_0 OR c_name < bucket_0 AND c_comment <= bucket_3 OR c_name >= bucket_3
+FROM supplier , orders SELECT s_comment WHERE o_shippriority < bucket_1 AND o_orderpriority < bucket_4 OR s_phone != bucket_0
+FROM supplier , part SELECT p_type
+FROM orders , part , supplier SELECT p_retailprice , o_orderstatus
+FROM nation SELECT n_regionkey , n_nationkey WHERE n_regionkey > bucket_2
+FROM orders SELECT o_orderstatus WHERE o_shippriority > bucket_1
+FROM supplier SELECT s_address
+FROM partsupp SELECT ps_comment
+FROM part , customer , partsupp SELECT c_comment WHERE p_container = bucket_2
+FROM partsupp SELECT ps_partkey , ps_supplycost WHERE ps_partkey >= bucket_2 AND ps_comment = bucket_4
+FROM lineitem , orders SELECT o_totalprice WHERE l_shipinstruct >= bucket_0
+FROM supplier SELECT s_phone WHERE s_address > bucket_3 AND s_comment >= bucket_0 OR s_comment >= bucket_1
+FROM part SELECT p_partkey
+FROM customer , partsupp , region SELECT r_regionkey , r_name
+FROM region , part , nation SELECT p_mfgr WHERE p_size < bucket_1 OR n_comment > bucket_3
+FROM supplier , nation SELECT n_comment , n_regionkey , s_address WHERE s_acctbal != bucket_4 AND n_nationkey <= bucket_4
+FROM orders , nation SELECT o_orderkey WHERE o_orderstatus > bucket_3 AND o_orderkey >= bucket_0 OR o_orderkey <= bucket_2
+FROM partsupp SELECT ps_partkey
+FROM region SELECT r_regionkey WHERE r_name <= bucket_0 AND r_comment < bucket_1
+FROM supplier , customer SELECT s_acctbal , s_nationkey WHERE c_custkey > bucket_1 AND s_address <= bucket_1 OR s_address <= bucket_1 OR s_suppkey >= bucket_0 OR s_name = bucket_2 AND s_comment != bucket_2 OR c_phone != bucket_4
+FROM customer SELECT c_mktsegment
+FROM lineitem , orders , customer SELECT o_orderpriority WHERE l_suppkey > bucket_4 AND o_orderpriority = bucket_2 OR l_extendedprice > bucket_2
+FROM nation SELECT n_regionkey WHERE n_nationkey >= bucket_3 AND n_name = bucket_1 AND n_nationkey > bucket_0
+FROM customer SELECT c_name
+FROM lineitem SELECT l_quantity WHERE l_linestatus <= bucket_2 AND l_suppkey = bucket_1 AND l_quantity < bucket_2 AND l_comment >= bucket_3
+FROM partsupp , customer , region SELECT r_regionkey
+FROM lineitem SELECT l_returnflag WHERE l_shipdate < bucket_4 AND l_orderkey >= bucket_3 OR l_comment < bucket_4
+FROM region , part SELECT p_name
+FROM orders SELECT o_comment
+FROM region , part , customer SELECT c_comment , r_regionkey
+FROM region SELECT r_comment WHERE r_comment > bucket_0 OR r_name > bucket_3 OR r_name < bucket_3 OR r_comment != bucket_0 OR r_comment <= bucket_0 AND r_name < bucket_0 OR r_regionkey >= bucket_3
+FROM part SELECT p_type , p_partkey , p_comment WHERE p_partkey >= bucket_1
+FROM supplier , part SELECT s_address WHERE s_name < bucket_3 AND p_brand < bucket_0 AND s_acctbal != bucket_4 AND p_retailprice = bucket_3 OR p_retailprice < bucket_0
+FROM part SELECT p_container
+FROM partsupp , lineitem SELECT l_shipdate
+FROM customer , supplier SELECT c_nationkey
+FROM region SELECT r_name
+FROM lineitem , customer , part SELECT p_name WHERE c_name <= bucket_3
+FROM lineitem , region SELECT r_regionkey
+FROM nation SELECT n_regionkey
+FROM orders SELECT o_orderdate WHERE o_shippriority != bucket_2 AND o_custkey > bucket_3 AND o_orderstatus <= bucket_2 OR o_orderstatus != bucket_2 AND o_orderpriority < bucket_1 OR o_clerk >= bucket_0
+FROM supplier ,  orders SELECT o_custkey
+FROM supplier SELECT s_address
+FROM orders , nation , region SELECT o_totalprice
+FROM orders SELECT o_orderdate WHERE o_orderkey > bucket_3
+FROM partsupp SELECT ps_partkey , ps_availqty
+FROM orders SELECT o_clerk WHERE o_clerk <= bucket_1
+FROM lineitem , customer , nation SELECT c_name , c_phone WHERE n_name > bucket_2 AND n_regionkey < bucket_0
+FROM region , partsupp SELECT r_name , ps_availqty WHERE ps_availqty != bucket_4 AND r_name >= bucket_4
+FROM orders SELECT o_custkey , o_orderstatus WHERE o_orderpriority <= bucket_3
+FROM region SELECT r_comment
+FROM part SELECT p_type
+FROM orders , supplier , part SELECT p_type , o_orderstatus
+FROM supplier , part SELECT s_name WHERE p_retailprice > bucket_2
+FROM supplier SELECT s_comment
+FROM nation SELECT n_name WHERE n_regionkey = bucket_0 OR n_regionkey <= bucket_4 OR n_nationkey != bucket_0
+FROM region , partsupp , supplier SELECT r_name
+FROM nation , partsupp SELECT ps_availqty
+FROM region SELECT r_name
+FROM supplier SELECT s_acctbal WHERE s_address != bucket_3
+FROM orders , supplier SELECT s_suppkey
+FROM supplier SELECT s_phone WHERE s_address = bucket_3 AND s_phone != bucket_3
+FROM orders , region SELECT o_clerk
+FROM lineitem SELECT l_comment , l_shipinstruct , l_partkey , l_shipdate , l_receiptdate WHERE l_linenumber != bucket_0 OR l_quantity != bucket_4 OR l_linenumber <= bucket_1
+FROM part , orders SELECT o_totalprice WHERE p_retailprice <= bucket_3 OR p_partkey >= bucket_0 OR o_orderdate <= bucket_0
+FROM part SELECT p_type
+FROM lineitem SELECT l_suppkey , l_shipmode WHERE l_shipmode < bucket_1
+FROM customer , orders , part SELECT o_orderpriority , c_name
+FROM customer , part , orders SELECT p_comment
+FROM region SELECT r_comment WHERE r_comment < bucket_3 OR r_comment != bucket_1 AND r_comment > bucket_1 AND r_regionkey < bucket_2 AND r_name > bucket_2 AND r_comment < bucket_1 AND r_comment >= bucket_4 OR r_comment > bucket_3
+FROM region SELECT r_comment WHERE r_comment != bucket_1 OR r_comment <= bucket_0 OR r_regionkey < bucket_2
+FROM lineitem , region SELECT r_name WHERE l_suppkey >= bucket_2 AND l_partkey != bucket_2 AND l_tax != bucket_0
+FROM customer , partsupp , orders SELECT c_mktsegment , o_orderpriority
+FROM lineitem SELECT l_shipinstruct , l_partkey
+FROM lineitem , customer ,  partsupp SELECT l_tax
+FROM nation , orders SELECT o_totalprice WHERE o_totalprice = bucket_2 AND o_orderkey >= bucket_1 AND o_orderdate >= bucket_0
+FROM lineitem SELECT l_commitdate WHERE l_returnflag < bucket_0 AND l_quantity < bucket_1 OR l_returnflag > bucket_3 AND l_quantity = bucket_1 AND l_suppkey > bucket_1 AND l_linenumber >= bucket_3 OR l_shipinstruct >= bucket_1 OR l_linenumber < bucket_4 OR l_extendedprice <= bucket_1 OR l_shipdate = bucket_2
+FROM region SELECT r_regionkey WHERE r_name != bucket_2
+FROM part SELECT p_size , p_name WHERE p_name = bucket_0 OR p_type = bucket_4
+FROM region SELECT r_comment
+FROM region SELECT r_regionkey WHERE r_comment < bucket_4
+FROM nation SELECT n_nationkey WHERE n_name > bucket_4 OR n_nationkey <= bucket_1 AND n_comment > bucket_3
+FROM nation SELECT n_name , n_regionkey WHERE n_nationkey > bucket_3
+FROM supplier , region , customer SELECT c_nationkey , c_acctbal
+FROM partsupp SELECT ps_comment WHERE ps_comment > bucket_1 AND ps_suppkey < bucket_4 AND ps_supplycost = bucket_1 OR ps_comment <= bucket_1 AND ps_suppkey <= bucket_3 AND ps_suppkey <= bucket_4 AND ps_comment != bucket_4 AND ps_availqty >= bucket_0
+FROM region , lineitem SELECT l_orderkey , l_discount
+FROM part , customer SELECT c_name WHERE p_container >= bucket_0 AND p_type < bucket_4 AND c_name != bucket_4
+FROM nation , part SELECT p_container WHERE n_regionkey <= bucket_2 OR p_name = bucket_1
+FROM supplier SELECT s_suppkey
+FROM partsupp SELECT ps_availqty , ps_suppkey
+FROM part , orders SELECT o_orderstatus WHERE o_custkey != bucket_1
+FROM part , customer , partsupp SELECT c_address WHERE p_size = bucket_2
+FROM partsupp SELECT ps_suppkey WHERE ps_comment > bucket_4 AND ps_comment = bucket_3
+FROM lineitem , part SELECT l_shipinstruct WHERE l_partkey < bucket_4 OR l_linenumber = bucket_1 OR l_partkey > bucket_3
+FROM nation , region , customer SELECT c_mktsegment WHERE r_name > bucket_2 OR n_nationkey <= bucket_0 AND n_regionkey <= bucket_1 OR c_comment < bucket_3
+FROM region , supplier , customer SELECT s_nationkey
+FROM orders SELECT o_shippriority
+FROM partsupp , nation , orders SELECT n_regionkey
+FROM part SELECT p_container
+FROM part , orders SELECT p_type WHERE p_retailprice = bucket_0 OR p_mfgr >= bucket_2
+FROM customer , orders SELECT c_mktsegment WHERE o_custkey >= bucket_3
+FROM orders , part , nation SELECT o_custkey WHERE p_comment <= bucket_2
+FROM region SELECT r_regionkey WHERE r_comment = bucket_1 OR r_name != bucket_2 AND r_name = bucket_2
+FROM partsupp , supplier , region SELECT s_nationkey
+FROM nation SELECT n_name WHERE n_nationkey >= bucket_0 AND n_comment < bucket_0
+FROM nation SELECT n_comment , n_name WHERE n_regionkey <= bucket_3
+FROM lineitem SELECT l_shipdate
+FROM partsupp SELECT ps_availqty , ps_supplycost
+FROM customer SELECT c_name
+FROM nation SELECT n_regionkey
+FROM part , lineitem , partsupp SELECT p_mfgr WHERE ps_partkey > bucket_3 AND l_tax < bucket_0 OR l_returnflag >= bucket_0
+FROM orders SELECT o_custkey WHERE o_orderkey <= bucket_3
+FROM partsupp , region , customer SELECT c_address
+FROM customer , orders , lineitem SELECT c_address
+FROM supplier SELECT s_name
+FROM lineitem , supplier , region SELECT l_quantity
+FROM lineitem , customer SELECT c_custkey , l_returnflag
+FROM orders SELECT o_custkey , o_comment WHERE o_orderkey > bucket_0
+FROM customer SELECT c_comment WHERE c_nationkey != bucket_2 AND c_custkey > bucket_2 AND c_phone = bucket_3
+FROM customer , region SELECT c_name
+FROM supplier , part SELECT s_address , p_mfgr
+FROM lineitem SELECT l_orderkey , l_returnflag WHERE l_linestatus <= bucket_1 AND l_tax < bucket_3 AND l_commitdate = bucket_0
+FROM supplier SELECT s_phone WHERE s_nationkey = bucket_1 AND s_name < bucket_2
+FROM nation SELECT n_name , n_nationkey WHERE n_nationkey >= bucket_2 AND n_regionkey = bucket_3 AND n_nationkey < bucket_3
+FROM lineitem , orders SELECT l_shipdate WHERE l_comment = bucket_0 OR o_comment <= bucket_4 AND o_totalprice > bucket_1 AND l_returnflag > bucket_0 AND o_orderkey = bucket_1
+FROM part , customer SELECT p_size
+FROM partsupp , supplier SELECT s_acctbal WHERE ps_suppkey <= bucket_2 OR s_acctbal > bucket_3 OR s_name = bucket_4 OR ps_availqty = bucket_4 OR s_nationkey < bucket_4 AND s_name > bucket_2 OR ps_comment <= bucket_4 AND s_nationkey >= bucket_4 OR ps_availqty = bucket_0 AND s_name >= bucket_0
+FROM supplier , orders SELECT s_phone WHERE s_phone = bucket_3 OR s_nationkey <= bucket_4 OR s_suppkey > bucket_1 OR o_comment <= bucket_3
+FROM supplier , partsupp , lineitem SELECT l_commitdate
+FROM orders , nation , supplier SELECT s_comment
+FROM region SELECT r_regionkey
+FROM customer , supplier SELECT s_phone
+FROM lineitem , supplier SELECT l_extendedprice
+FROM nation SELECT n_comment
+FROM region , lineitem , nation SELECT l_partkey
+FROM lineitem , supplier , part SELECT p_partkey WHERE s_suppkey >= bucket_1 AND l_tax != bucket_0 OR l_shipmode != bucket_3
+FROM customer , supplier SELECT s_comment WHERE s_comment >= bucket_4 AND c_name > bucket_1 OR c_mktsegment <= bucket_3
+FROM customer SELECT c_name
+FROM part , region , orders SELECT p_size
+FROM supplier , part , region SELECT s_name
+FROM orders , nation SELECT o_clerk
+FROM orders , part SELECT p_comment , o_shippriority WHERE o_comment < bucket_0 AND o_custkey >= bucket_0 AND o_shippriority <= bucket_3
+FROM customer SELECT c_phone
+FROM orders , partsupp , customer SELECT c_name , o_custkey
+FROM nation , region SELECT r_comment , r_regionkey , n_regionkey , n_comment WHERE n_name != bucket_1 OR n_comment <= bucket_1 AND n_name <= bucket_4
+FROM supplier SELECT s_nationkey , s_phone WHERE s_address > bucket_0 OR s_nationkey > bucket_3 OR s_acctbal = bucket_3
+FROM customer SELECT c_comment WHERE c_phone > bucket_2 OR c_name >= bucket_2
+FROM partsupp SELECT ps_suppkey WHERE ps_availqty > bucket_0
+FROM customer SELECT c_acctbal WHERE c_acctbal > bucket_1 OR c_mktsegment != bucket_1 AND c_phone != bucket_4 AND c_comment = bucket_2 AND c_name = bucket_2 OR c_acctbal != bucket_1 OR c_nationkey < bucket_2
+FROM partsupp , lineitem , part SELECT ps_supplycost , l_linenumber
+FROM partsupp SELECT ps_supplycost WHERE ps_supplycost > bucket_4 OR ps_comment != bucket_3 AND ps_supplycost < bucket_2 OR ps_availqty < bucket_0
+FROM customer , orders SELECT c_address
+FROM part , supplier , orders SELECT p_comment WHERE p_size != bucket_3
+FROM region , partsupp SELECT r_regionkey WHERE ps_supplycost <= bucket_3
+FROM part SELECT p_retailprice
+FROM orders , nation SELECT o_custkey WHERE o_orderkey < bucket_2 AND n_name = bucket_2 OR n_nationkey > bucket_0 AND o_comment >= bucket_1
+FROM region , customer SELECT c_comment
+FROM part , region SELECT p_size
+FROM region , customer SELECT c_nationkey WHERE r_regionkey >= bucket_0 OR c_address != bucket_4
+FROM nation SELECT n_name , n_regionkey WHERE n_comment != bucket_2
+FROM customer , part , lineitem SELECT l_linenumber WHERE l_linestatus != bucket_2 AND c_acctbal <= bucket_1
+FROM customer , orders , lineitem SELECT o_orderstatus WHERE l_comment = bucket_0
+FROM customer SELECT c_phone
+FROM partsupp SELECT ps_comment WHERE ps_comment != bucket_0 AND ps_partkey != bucket_2 AND ps_availqty >= bucket_0 AND ps_comment != bucket_1 AND ps_suppkey <= bucket_2
+FROM part SELECT p_comment WHERE p_mfgr <= bucket_2 AND p_name < bucket_1
+FROM supplier , customer SELECT c_acctbal , c_comment
+FROM part SELECT p_type WHERE p_mfgr > bucket_0 OR p_name != bucket_2 OR p_type >= bucket_0 AND p_container > bucket_1 OR p_retailprice <= bucket_1 AND p_mfgr <= bucket_0 AND p_brand <= bucket_1 OR p_type < bucket_1 OR p_name <= bucket_3 AND p_partkey > bucket_2 OR p_mfgr > bucket_2
+FROM nation SELECT n_name WHERE n_comment != bucket_1
+FROM lineitem SELECT l_discount WHERE l_comment < bucket_0 OR l_receiptdate <= bucket_0
+FROM partsupp SELECT ps_partkey WHERE ps_partkey != bucket_1
+FROM region , lineitem SELECT l_linenumber WHERE l_shipmode < bucket_2
+FROM customer SELECT c_name , c_address WHERE c_address = bucket_3 AND c_acctbal <= bucket_2 OR c_custkey <= bucket_3
+FROM supplier , orders SELECT o_orderdate
+FROM orders , supplier , nation SELECT s_acctbal , o_totalprice WHERE s_name = bucket_3 OR o_orderstatus = bucket_2 OR o_orderstatus > bucket_3 OR o_custkey < bucket_0 AND o_clerk > bucket_4
+FROM customer SELECT c_mktsegment , c_address
+FROM region , lineitem , orders SELECT l_shipdate WHERE o_orderkey = bucket_3
+FROM part , orders SELECT p_container
+FROM part SELECT p_name , p_type WHERE p_retailprice = bucket_4
+FROM lineitem , partsupp , nation SELECT n_nationkey
+FROM lineitem , customer SELECT l_quantity , l_orderkey , c_comment
+FROM nation , supplier , lineitem SELECT n_nationkey
+FROM lineitem SELECT l_discount
+FROM part SELECT p_container
+FROM orders SELECT o_orderkey , o_orderdate WHERE o_orderdate = bucket_3 AND o_orderkey >= bucket_0

@@ -1,0 +1,31 @@
+?start: "FROM" table_ref "SELECT" select_stmt (where)?
+select_stmt: sel_column (comma sel_column)*
+table_ref: table_name (comma table_name)*
+where: "WHERE" where_clause (logic where_clause)*
+where_clause: where_column op value
+comma: ","
+table_name: tab_name
+sel_column: sel_col_name
+where_column: where_col_name
+op: lt | st | le | se | eq | ne
+logic: and | or 
+and: "AND"
+or: "OR"
+lt: ">"
+st: "<"
+le: ">="
+se: "<="
+eq: "="
+ne: "!="
+all: "*"
+value: bucket_zero | bucket_one | bucket_two | bucket_three | bucket_four 
+bucket_zero: "bucket_0"
+bucket_one: "bucket_1"
+bucket_two: "bucket_2"
+bucket_three: "bucket_3"
+bucket_four: "bucket_4"
+%import common.CNAME
+%import common.ESCAPED_STRING
+%import common.SIGNED_NUMBER
+%import common.WS
+%ignore WS
